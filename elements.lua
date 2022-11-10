@@ -1,9 +1,11 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 --EARTH--
 resourcecrops.add_crop("Earth", "earth", "extreme", "group:stone", nil)
 
 --NATURE--
 minetest.register_craftitem("resource_crops:grass_seed", {
-    description = ("Grass Seed"),
+    description = S("Grass Seed"),
     inventory_image = "resource_crops_grass_seed.png",
 })
 resourcecrops.add_crop("Nature", "nature", "extreme", "group:leaves", "resource_crops:grass_seed")
@@ -18,7 +20,7 @@ minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
 		puncher:set_wielded_item(item)
 	    end
 	end
-    end 
+    end
 end)
 
 --WATER--
@@ -161,7 +163,7 @@ minetest.register_craft({
 
 --FIRE--
 minetest.register_craftitem("resource_crops:inferno_stone", {
-	description = ("Inferno Stone"),
+	description = S("Inferno Stone"),
 	inventory_image = "resource_crops_inferno_stone.png",
 	stack_max = 1,
 })

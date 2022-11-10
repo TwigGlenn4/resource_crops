@@ -1,0 +1,24 @@
+# textdomain: resource_crops
+
+### elements.lua ###
+Grass Seed=Herba Semo
+Inferno Stone=Infera Ŝtono
+
+### essence.lua ###
+Essence Seeds=Esencaj Semoj
+Essence Dust=Esenca Polvo
+Weak Essence=Malforta Esenco
+Regular Essence=Regula Esenco
+Strong Essence=Forta Esenco
+Extreme Essence=Ekstrema Esenco
+Essence Block=Esenca Bloko
+
+### lib.lua ###
+Seeds=Semoj
+Essence=Esenco
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=Malforta Ĝisdatiga Ŝtono
+Regular Upgrade Stone=Regula Ĝisdatiga Ŝtono
+Strong Upgrade Stone=Forta Ĝisdatiga Ŝtono
+Extreme Upgrade Stone=Ekstrema Ĝisdatiga Ŝtono

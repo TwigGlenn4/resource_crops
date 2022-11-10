@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 --Register an alias for steel ingot and undo technic's name change.
 minetest.register_alias("default:iron_ingot", "default:steel_ingot")
 if resourcecrops.has_technic then
@@ -171,7 +173,7 @@ end
 function resourcecrops.add_crop(visible_name, resource_name, essence_type, recipe_input, recipe_output)
 	--Seed
 	minetest.register_craftitem("resource_crops:"..resource_name.."_seed", {
-		description = (visible_name.." Seeds"),
+		description = (visible_name.." " .. S("Seeds")),
 		inventory_image = "resource_crops_"..resource_name.."_seed.png",
 		groups = {essence_seed = 1},
 		on_place = function(itemstack, placer, pointed_thing)
@@ -261,7 +263,7 @@ function resourcecrops.add_crop(visible_name, resource_name, essence_type, recip
 
 	--Register Essence
 	minetest.register_craftitem("resource_crops:"..resource_name.."_essence", {
-		description = (visible_name.." Essence"),
+		description = (visible_name.." " .. S("Essence")),
 		inventory_image = "resource_crops_"..resource_name.."_essence.png",
 		groups = essence_groups
 	})
