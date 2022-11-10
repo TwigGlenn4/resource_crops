@@ -1,5 +1,5 @@
 minetest.register_craftitem("resource_crops:upgrade_stone_weak", {
-	description = ("Weak Upgrade Stone"),
+	description = S("Weak Upgrade Stone"),
 	inventory_image = "resource_crops_upgrade_stone_weak.png",
 	stack_max = 1,
 })
@@ -11,7 +11,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("resource_crops:upgrade_stone_regular", {
-	description = ("Regular Upgrade Stone"),
+	description = S("Regular Upgrade Stone"),
 	inventory_image = "resource_crops_upgrade_stone_regular.png",
 	stack_max = 1,
 })
@@ -24,7 +24,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("resource_crops:upgrade_stone_strong", {
-	description = ("Strong Upgrade Stone"),
+	description = S("Strong Upgrade Stone"),
 	inventory_image = "resource_crops_upgrade_stone_strong.png",
 	stack_max = 1,
 })
@@ -37,7 +37,7 @@ minetest.register_craft({
 })
 
 minetest.register_craftitem("resource_crops:upgrade_stone_extreme", {
-	description = ("Extreme Upgrade Stone"),
+	description = S("Extreme Upgrade Stone"),
 	inventory_image = "resource_crops_upgrade_stone_extreme.png",
 	stack_max = 1,
 })

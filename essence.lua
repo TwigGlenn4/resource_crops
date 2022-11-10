@@ -1,8 +1,10 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 --reused resourcecrops.add_crop code because of drop changes.
 --Seed
 
 minetest.register_craftitem("resource_crops:essence_seed", {
-	description = ("Essence Seeds"),
+	description = S("Essence Seeds"),
 	inventory_image = "resource_crops_essence_seed.png",
 	groups = {essence_seed = 1},
 	on_place = function(itemstack, placer, pointed_thing)
@@ -88,7 +90,7 @@ minetest.register_node("resource_crops:essencecrop", {
 
 --Register Items
 minetest.register_craftitem("resource_crops:essence_dust", {
-	description = ("Essence Dust"),
+	description = S("Essence Dust"),
 	groups = {magic_essence = 1},
 	inventory_image = "resource_crops_essence_dust.png"
 })
@@ -98,28 +100,28 @@ farming.add_plant("resource_crops:essencecrop", {"resource_crops:essencecrop_1",
 
 --Register essences
 minetest.register_craftitem("resource_crops:essence_weak", {
-	description = ("Weak Essence"),
+	description = S("Weak Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_weak.png"
 })
 minetest.register_craftitem("resource_crops:essence_regular", {
-	description = ("Regular Essence"),
+	description = S("Regular Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_regular.png"
 })
 minetest.register_craftitem("resource_crops:essence_strong", {
-	description = ("Strong Essence"),
+	description = S("Strong Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_strong.png"
 })
 minetest.register_craftitem("resource_crops:essence_extreme", {
-	description = ("Extreme Essence"),
+	description = S("Extreme Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_extreme.png"
 })
 
 minetest.register_node("resource_crops:essence_block", {
-	description = "Essence Block",
+	description = S("Essence Block"),
 	tiles = {"resource_crops_essence_block.png"},
 	groups = {snappy=1,oddly_breakable_by_hand=2},
 })

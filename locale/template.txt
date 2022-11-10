@@ -1,0 +1,24 @@
+# textdomain: resource_crops
+
+### elements.lua ###
+Grass Seed=
+Inferno Stone=
+
+### essence.lua ###
+Essence Seeds=
+Essence Dust=
+Weak Essence=
+Regular Essence=
+Strong Essence=
+Extreme Essence=
+Essence Block=
+
+### lib.lua ###
+Seeds=
+Essence=
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=
+Regular Upgrade Stone=
+Strong Upgrade Stone=
+Extreme Upgrade Stone=
