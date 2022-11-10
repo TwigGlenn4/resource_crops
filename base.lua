@@ -1,7 +1,9 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 --Essence ore
 if resourcecrops.settings.essence_ore then
 minetest.register_node("resource_crops:essence_ore", {
-	description = "Essence Ore",
+	description = S("Essence Ore"),
 	tiles = {"default_stone.png^resource_crops_essence_ore.png"},
 	groups = {cracky = 2},
 	drop = "resource_crops:essence_dust",
@@ -22,7 +24,7 @@ end
 --Essence harvester
 if resourcecrops.settings.essence_harvester then
 minetest.register_node("resource_crops:essence_harvester", {
-	description = "Essence Harvester",
+	description = S("Essence Harvester"),
 	tiles = {"resource_crops_essence_harvester.png", "resource_crops_essence_harvester_bottom.png",
              "resource_crops_essence_harvester.png", "resource_crops_essence_harvester.png",
              "resource_crops_essence_harvester.png", "resource_crops_essence_harvester.png"},

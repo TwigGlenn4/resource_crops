@@ -1,7 +1,19 @@
 # textdomain: resource_crops
 
+### base.lua ###
+Essence Ore=
+Essence Harvester=
+
 ### elements.lua ###
-Grass Seed=
+Earth Seeds=
+Earth Essence=
+Grass Seeds=
+Nature Seeds=
+Nature Essence=
+Water Seeds=
+Water Essence=
+Fire Seeds=
+Fire Essence=
 Inferno Stone=
 
 ### essence.lua ###
@@ -13,9 +25,45 @@ Strong Essence=
 Extreme Essence=
 Essence Block=
 
-### lib.lua ###
-Seeds=
-Essence=
+### init.lua ###
+Coal Seeds=
+Coal Essence=
+Tin Seeds=
+Tin Essence=
+Copper Seeds=
+Copper Essence=
+Iron Seeds=
+Iron Essence=
+Gold Seeds=
+Gold Essence=
+Diamond Seeds=
+Diamond Essence=
+Mese Seeds=
+Mese Essence=
+Silver Seeds=
+Silver Essence=
+Mithril Seeds=
+Mithril Essence=
+Brass Seeds=
+Brass Essence=
+Cast Iron Seeds=
+Cast Iron Essence=
+Carbon Steel Seeds=
+Carbon Steel Essence=
+Chromium Seeds=
+Chromium Essence=
+Lead Seeds=
+Lead Essence=
+Suflur Seeds=
+Suflur Essence=
+Uranium Seeds=
+Uranium Essence=
+Zinc Seeds=
+Zinc Essence=
+Rubber Seeds=
+Rubber Essence=
+Terumetal Seeds=
+Terumetal Essence=
 
 ### upgrade_stones.lua ###
 Weak Upgrade Stone=

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_craftitem("resource_crops:upgrade_stone_weak", {
 	description = S("Weak Upgrade Stone"),
 	inventory_image = "resource_crops_upgrade_stone_weak.png",

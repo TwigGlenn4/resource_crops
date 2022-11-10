@@ -1,19 +1,9 @@
 # textdomain: resource_crops
 
-### base.lua ###
-Essence Ore=
-Essence Harvester=
-
 ### elements.lua ###
-Earth Seeds=
-Earth Essence=
-Grass Seeds=
-Nature Seeds=
-Nature Essence=
-Water Seeds=
+Grass Seed=Herba Semo
+Water Seed=
 Water Essence=
-Fire Seeds=
-Fire Essence=
 Inferno Stone=Infera Ŝtono
 
 ### essence.lua ###
@@ -74,6 +64,5 @@ Extreme Upgrade Stone=Ekstrema Ĝisdatiga Ŝtono
 
 ##### not used anymore #####
 
-Grass Seed=Herba Semo
 Seeds=Semoj
 Essence=Esenco
