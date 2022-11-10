@@ -18,16 +18,16 @@ resourcecrops_growth_chance (growth chance) = 2
 ### Essence Ore
 Essence Ore is found between depths of -5 and -5000.
 ### Essence Harvester
-The Essence Harvester will harvest a resource crop of any type, dropping the items under it on the crop. It must be placed above the crop it will harvest.
+The Essence Harvester will harvest any fully grown resource crop directly under it and drop the item onto the crop.
 ### Seeds
-Seeds are placed on farmland, only grow when it is wet, and can be crafted into it's respective essence.
+Seeds are placed on farmland, only grow when it is wet, and can be crafted into their respective essence.
 ### Essences 
-Essences are usually crafted into their results by filling the crafting grid.
-### Elements
-Mostly used as another way to get misc items. Fire essence can be crafted with an item to smelt it, 
-but this only works with ores for the metals that have crops and all smelting recipies from *minetest_game*
+Essences are usually crafted into materials by filling the crafting grid, see special recipies with a crafting guide mod.
+### Elemental Essences
+Mostly used as another way to get misc items. Fire essence can be crafted with an item to smelt it.
+Essence Smelting only currently works with metals that have existing crops and recipies from *minetest_game*
 ### Inferno Stone
-The Inferno Stone can be crafted with an item to get the twice the result of smelting that item, and you get the Inferno Stone back.
+The Inferno Stone can be crafted with an item to get the twice the result of smelting that item, it is not consumed by the recipe.
 This only works on the same items as fire essence.
 ### Crops
 Crops require a light level of at least 8, so they can grow in torchlight. You can punch a crop to harvest it, 
@@ -45,7 +45,7 @@ To change the config options of this mod, you have two options:
 4. Open the "resource_crops" subsection.
 5. Change values as you wish!
 
-### Text Editor & Server
+### Text Editor or Server
 1. Find "resourcecrops" in your "mods" folder.
 2. Open "settingtypes.txt", copy options you want to change, but not the lines starting with "#".
 3. Find "minetest.conf" in minetest's main folder, it might be beside the "mods" folder.
@@ -60,8 +60,8 @@ or [Technic](https://forum.minetest.net/viewtopic.php?t=2538)
 are installed, their respective crops can be grown. if not, the crops are automatically disabled.
 
 ### Minetest
-This mod works on minetest 0.4.16 and is compatible with the 5.0.0 update.
-It might work on older versions if the required dependencies are installed, but I cannot guarantee it.
+This mod has been tested on Minetest 0.4.16, 5.0.0, and 5.4.1.
+It might work on older versions, but I have not tested them.
 
 ## License
 
