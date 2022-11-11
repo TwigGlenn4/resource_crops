@@ -8,4 +8,4 @@ Some of the code is edited from PilzAdam's "FarmingPlus" mod.
 Textures are completely made by me, TwigGlenn4.
 
 v1.2.2 fixes crafting obsidian from fire, earth, and water essences.
-v1.3.0 (WIP) adds code for translations and the Esperanto translation by jolesh
+v1.3.0 adds support for translations, Esperanto translation by jolesh, and Español translation by Google Translate

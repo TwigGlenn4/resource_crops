@@ -1,0 +1,72 @@
+# textdomain: resource_crops
+
+### base.lua ###
+Essence Ore=Mineral de esencia
+Essence Harvester=Cosechador de esencia
+
+### elements.lua ###
+Earth Seeds=Semilla de tierra
+Earth Essence=Esencia de tierra
+Grass Seeds=Semilla de cesped
+Nature Seeds=Semillas de la naturaleza
+Nature Essence=Esencia de la naturaleza
+Water Seeds=Semillas de agua
+Water Essence=Esencia de agua
+Fire Seeds=Semillas de fuego
+Fire Essence=Esencia de fuego
+Inferno Stone=Piedra de lava
+
+### essence.lua ###
+Essence Seeds=Semillas de esencia
+Essence Dust=Polvo de esencia
+Weak Essence=Esencia débil
+Regular Essence=Esencia normal
+Strong Essence=Esencia fuerte
+Extreme Essence=Esencia extrema
+Essence Block=Bloque de esencia
+
+### init.lua ###
+Coal Seeds=Semillas de carbón
+Coal Essence=Esencia de carbón
+Tin Seeds=Semillas de estaño
+Tin Essence=Esencia de estaño
+Copper Seeds=Semillas de cobre
+Copper Essence=Esencia de Cobre
+Iron Seeds=Semillas de hierro
+Iron Essence=Esencia de hierro
+Gold Seeds=Semillas de oro
+Gold Essence=Esencia de oro
+Diamond Seeds=Semillas de diamante
+Diamond Essence=Esencia de diamante
+Mese Seeds=Semillas de mese
+Mese Essence=Esencia de mese
+Silver Seeds=Semillas de plata
+Silver Essence=Esencia de plata
+Mithril Seeds=Semillas de mitrilo
+Mithril Essence=Esencia de mitrilo
+Brass Seeds=Semillas de latón
+Brass Essence=Esencia de latón
+Cast Iron Seeds=Semillas de hierro fundido
+Cast Iron Essence=Esencia de hierro fundido
+Carbon Steel Seeds=Semillas de acero al carbono
+Carbon Steel Essence=Esencia de acero al carbono
+Chromium Seeds=Semillas de cromo
+Chromium Essence=Esencia de cromo
+Lead Seeds=Semillas de plomo
+Lead Essence=Esencia de plomo
+Sulfur Seeds=Semillas de azufre
+Sulfur Essence=Esencia de azufre
+Uranium Seeds=Semillas de uranio
+Uranium Essence=Esencia de uranio
+Zinc Seeds=Semillas de zinc
+Zinc Essence=Esencia de zinc
+Rubber Seeds=Semillas de caucho
+Rubber Essence=Esencia de caucho
+Terumetal Seeds=Semillas de Terumetal
+Terumetal Essence=Esencia de terumetal
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=Piedra de mejora débil
+Regular Upgrade Stone=Piedra de mejora regular
+Strong Upgrade Stone=Piedra de mejora fuerte
+Extreme Upgrade Stone=Piedra de mejora extrema

@@ -58,7 +58,7 @@ end if resourcecrops.settings.crop_chromium then
 end if resourcecrops.settings.crop_lead then
     resourcecrops.add_crop(S("Lead Seeds"), S("Lead Essence"), "lead", "regular", "technic:lead_ingot", "technic:lead_lump 2")
 end if resourcecrops.settings.crop_sulfur then
-    resourcecrops.add_crop(S("Suflur Seeds"), S("Suflur Essence"), "sulfur", "weak", "technic:sulfur_lump", "technic:sulfur_lump 2")
+    resourcecrops.add_crop(S("Sulfur Seeds"), S("Sulfur Essence"), "sulfur", "weak", "technic:sulfur_lump", "technic:sulfur_lump 2")
 end if resourcecrops.settings.crop_uranium then
     resourcecrops.add_crop(S("Uranium Seeds"), S("Uranium Essence"), "uranium", "extreme", "technic:uranium_ingot", "technic:uranium_lump 2")
 end if resourcecrops.settings.crop_zinc then
