@@ -1,3 +1,6 @@
+[![ContentDB](https://content.minetest.net/packages/TwigGlenn4/resource_crops/shields/title/)](https://content.minetest.net/packages/TwigGlenn4/resource_crops/)
+[![ContentDB](https://content.minetest.net/packages/TwigGlenn4/resource_crops/shields/downloads/)](https://content.minetest.net/packages/TwigGlenn4/resource_crops/)
+
 # Resource Crops
 
 Resource Crops is a mod made by TwigGlenn4 that adds crops that grow resources to [Minetest](https://www.minetest.net/), 
