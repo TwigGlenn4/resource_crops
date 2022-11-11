@@ -1,19 +1,19 @@
 # textdomain: resource_crops
 
 ### base.lua ###
-Essence Ore=
-Essence Harvester=
+Essence Ore=Esenca Erco
+Essence Harvester=Esenca Rikoltilo
 
 ### elements.lua ###
-Earth Seeds=
-Earth Essence=
-Grass Seeds=
-Nature Seeds=
-Nature Essence=
-Water Seeds=
-Water Essence=
-Fire Seeds=
-Fire Essence=
+Earth Seeds=Teraj Semoj
+Earth Essence=Tera Esenco
+Grass Seeds=Herbaj Semoj
+Nature Seeds=Naturaj Semoj
+Nature Essence=Natura Esenco
+Water Seeds=Akvaj Semoj
+Water Essence=Akva Esenco
+Fire Seeds=Fajraj Semoj
+Fire Essence=Fajra Esenco
 Inferno Stone=Infera Ŝtono
 
 ### essence.lua ###
@@ -26,44 +26,44 @@ Extreme Essence=Ekstrema Esenco
 Essence Block=Esenca Bloko
 
 ### init.lua ###
-Coal Seeds=
-Coal Essence=
-Tin Seeds=
-Tin Essence=
-Copper Seeds=
-Copper Essence=
-Iron Seeds=
-Iron Essence=
-Gold Seeds=
-Gold Essence=
-Diamond Seeds=
-Diamond Essence=
-Mese Seeds=
-Mese Essence=
-Silver Seeds=
-Silver Essence=
-Mithril Seeds=
-Mithril Essence=
-Brass Seeds=
-Brass Essence=
-Cast Iron Seeds=
-Cast Iron Essence=
-Carbon Steel Seeds=
-Carbon Steel Essence=
-Chromium Seeds=
-Chromium Essence=
-Lead Seeds=
-Lead Essence=
-Suflur Seeds=
-Suflur Essence=
-Uranium Seeds=
-Uranium Essence=
-Zinc Seeds=
-Zinc Essence=
-Rubber Seeds=
-Rubber Essence=
-Terumetal Seeds=
-Terumetal Essence=
+Coal Seeds=Karbaj Semoj
+Coal Essence=Karba Esenco
+Tin Seeds=Stanaj Semoj
+Tin Essence=Stana Esenco
+Copper Seeds=Kupraj Semoj
+Copper Essence=Kupra Esenco
+Iron Seeds=Feraj Semoj
+Iron Essence=Fera Esenco
+Gold Seeds=Oraj Semoj
+Gold Essence=Ora Esenco
+Diamond Seeds=Diamantaj Semoj
+Diamond Essence=Diamanta Esenco
+Mese Seeds=Meseaj Semoj
+Mese Essence=Mesea Esenco
+Silver Seeds=Arĝentaj Semoj
+Silver Essence=Arĝenta Esenco
+Mithril Seeds=Mitrilaj Semoj
+Mithril Essence=Mitrila Esenco
+Brass Seeds=Latunaj Semoj
+Brass Essence=Latuna Esenco
+Cast Iron Seeds=Gisferaj Semoj
+Cast Iron Essence=Gisfera Esenco
+Carbon Steel Seeds=Karbona Ŝtalaj Semoj
+Carbon Steel Essence=Karbona Ŝtala Esenco
+Chromium Seeds=Kromaj Semoj
+Chromium Essence=Kroma Esenco
+Lead Seeds=Plumbaj Semoj
+Lead Essence=Plumba Esenco
+Suflur Seeds=Sulfuraj Semoj
+Suflur Essence=Sulfura Esenco
+Uranium Seeds=Uraniaj Semoj
+Uranium Essence=Urania Esenco
+Zinc Seeds=Zinkaj Semoj
+Zinc Essence=Zinka Esenco
+Rubber Seeds=Kaŭĉukaj Semoj
+Rubber Essence=Kaŭĉuka Esenco
+Terumetal Seeds=Terumetalaj Semoj
+Terumetal Essence=Terumetala Esenco
 
 ### upgrade_stones.lua ###
 Weak Upgrade Stone=Malforta Ĝisdatiga Ŝtono
