@@ -170,10 +170,10 @@ end
 
 
 --Add a resource crop.
-function resourcecrops.add_crop(visible_name, resource_name, essence_type, recipe_input, recipe_output)
+function resourcecrops.add_crop(seed_translate, essence_translate, resource_name, essence_type, recipe_input, recipe_output)
 	--Seed
 	minetest.register_craftitem("resource_crops:"..resource_name.."_seed", {
-		description = (visible_name.." " .. S("Seeds")),
+		description = seed_translate,
 		inventory_image = "resource_crops_"..resource_name.."_seed.png",
 		groups = {essence_seed = 1},
 		on_place = function(itemstack, placer, pointed_thing)
@@ -263,7 +263,7 @@ function resourcecrops.add_crop(visible_name, resource_name, essence_type, recip
 
 	--Register Essence
 	minetest.register_craftitem("resource_crops:"..resource_name.."_essence", {
-		description = (visible_name.." " .. S("Essence")),
+		description = (essence_translate),
 		inventory_image = "resource_crops_"..resource_name.."_essence.png",
 		groups = essence_groups
 	})
@@ -293,11 +293,4 @@ function resourcecrops.add_crop(visible_name, resource_name, essence_type, recip
 	})
 	--Add Plant
 	farming.add_plant("resource_crops:"..resource_name.."crop", {"resource_crops:"..resource_name.."crop_1", "resource_crops:"..resource_name.."crop_2", "resource_crops:"..resource_name.."crop_3"})
-
-	minetest.register_alias_force("resourcecrops:"..resource_name.."_seed", "resource_crops:"..resource_name.."_seed")
-	minetest.register_alias_force("resourcecrops:"..resource_name.."crop_1", "resource_crops:"..resource_name.."crop_1")
-	minetest.register_alias_force("resourcecrops:"..resource_name.."crop_2", "resource_crops:"..resource_name.."crop_2")
-	minetest.register_alias_force("resourcecrops:"..resource_name.."crop_3", "resource_crops:"..resource_name.."crop_3")
-	minetest.register_alias_force("resourcecrops:"..resource_name.."crop", "resource_crops:"..resource_name.."crop")
-	minetest.register_alias_force("resourcecrops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence")
 end

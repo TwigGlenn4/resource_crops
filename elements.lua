@@ -1,14 +1,15 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
 --EARTH--
-resourcecrops.add_crop("Earth", "earth", "extreme", "group:stone", nil)
+resourcecrops.add_crop(S("Earth Seeds"), S("Earth Essence"), "earth", "extreme", "group:stone", nil)
 
 --NATURE--
 minetest.register_craftitem("resource_crops:grass_seed", {
-    description = S("Grass Seed"),
+    description = S("Grass Seeds"),
     inventory_image = "resource_crops_grass_seed.png",
 })
-resourcecrops.add_crop("Nature", "nature", "extreme", "group:leaves", "resource_crops:grass_seed")
+
+resourcecrops.add_crop(S("Nature Seeds"), S("Nature Essence"), "nature", "extreme", "group:leaves", "resource_crops:grass_seed")
 minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
     if node.name == "default:dirt" then
 	local puncher_name = puncher:get_player_name()
@@ -24,7 +25,7 @@ minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
 end)
 
 --WATER--
-resourcecrops.add_crop("Water", "water", "extreme", nil, "default:snow 9")
+resourcecrops.add_crop(S("Water Seeds"), S("Water Essence"), "water", "extreme", nil, "default:snow 9")
 minetest.register_craft({
     output = "resource_crops:water_seed",
     recipe = {{"bucket:bucket_water", "resource_crops:essence_extreme", "bucket:bucket_water"},
@@ -41,7 +42,7 @@ minetest.register_craft({
 })
 
 --FIRE--
-resourcecrops.add_crop("Fire", "fire", "extreme", nil, "fire:permanent_flame")
+resourcecrops.add_crop(S("Fire Seeds"), S("Fire Essence"), "fire", "extreme", nil, "fire:permanent_flame")
 minetest.register_craft({
     output = "resource_crops:fire_seed",
     recipe = {{"bucket:bucket_lava", "resource_crops:essence_extreme", "bucket:bucket_lava"},
