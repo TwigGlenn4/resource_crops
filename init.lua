@@ -71,4 +71,43 @@ end
 if resourcecrops.settings.crop_terumet then
     resourcecrops.add_crop(S("Terumetal Seeds"), S("Terumetal Essence"), "terumetal", "strong", "terumet:lump_raw", "terumet:lump_raw 2")
 end
+
+-- xtraores metals
+if resourcecrops.settings.crop_nickel then
+    resourcecrops.add_crop(S("Nickel Seeds"), S("Nickel Essence"), "nickel", "weak", "xtraores:nickel_bar", "xtraores:nickel_bar 4")
+end if resourcecrops.settings.crop_platinum then
+    resourcecrops.add_crop(S("Platinum Seeds"), S("Platinum Essence"), "platinum", "regular", "xtraores:platinum_bar", "xtraores:platinum_bar 3")
+end if resourcecrops.settings.crop_palladium then
+    resourcecrops.add_crop(S("Palladium Seeds"), S("Palladium Essence"), "palladium", "strong", "xtraores:palladium_bar", "xtraores:palladium_bar 3")
+end if resourcecrops.settings.crop_cobalt then
+    resourcecrops.add_crop(S("Cobalt Seeds"), S("Cobalt Essence"), "cobalt", "strong", "xtraores:cobalt_bar", "xtraores:cobalt_bar 2")
+end if resourcecrops.settings.crop_thorium then
+    resourcecrops.add_crop(S("Thorium Seeds"), S("Thorium Essence"), "thorium", "strong", "xtraores:thorium_bar", "xtraores:thorium_bar 1")
+end if resourcecrops.settings.crop_antracite then
+    resourcecrops.add_crop(S("Antracite Seeds"), S("Antracite Essence"), "antracite", "strong", "xtraores:antracite_lump", "xtraores:antracite_lump 1")
+end if resourcecrops.settings.crop_osmium then
+    resourcecrops.add_crop(S("Osmium Seeds"), S("Osmium Essence"), "osmium", "extreme", "xtraores:osmium_bar", "xtraores:osmium_bar 3")
+end if resourcecrops.settings.crop_rhenium then
+    resourcecrops.add_crop(S("Rhenium Seeds"), S("Rhenium Essence"), "rhenium", "extreme", "xtraores:rhenium_bar", "xtraores:rhenium_bar 2")
+end if resourcecrops.settings.crop_vanadium then
+    resourcecrops.add_crop(S("Vanadium Seeds"), S("Vanadium Essence"), "vanadium", "extreme", "xtraores:vanadium_bar", "xtraores:vanadium_bar 1")
+end if resourcecrops.settings.crop_rarium then
+    resourcecrops.add_crop(S("Rarium Seeds"), S("Rarium Essence"), "rarium", "extreme", "xtraores:rarium_bar", "xtraores:rarium_bar 1")
+end if resourcecrops.settings.crop_orichalcum then
+    resourcecrops.add_crop(S("Orichalcum Seeds"), S("Orichalcum Essence"), "orichalcum", "extreme", "xtraores:orichalcum_bar", "xtraores:orichalcum_bar 1")
+end if resourcecrops.settings.crop_titanium then
+    resourcecrops.add_crop(S("Titanium Seeds"), S("Titanium Essence"), "titanium", "extreme", "xtraores:titanium_bar", "xtraores:titanium_bar 1")
+end
+--These materials have the same name as ones from technic, rename them if the technic crop is enabled.
+if resourcecrops.settings.crop_xores_uranium and resourcecrops.settings.crop_uranium then
+    resourcecrops.add_crop(S("Uranium (XtraOres) Seeds"), S("Uranium (XtraOres) Essence"), "xores_uranium", "extreme", "xtraores:uranium_bar", "xtraores:uranium_bar 1")
+elseif resourcecrops.settings.crop_xores_uranium then
+    resourcecrops.add_crop(S("Uranium Seeds"), S("Uranium Essence"), "xores_uranium", "extreme", "xtraores:uranium_bar", "xtraores:uranium_bar 1")
+end
+if resourcecrops.settings.crop_xores_chromium and resourcecrops.settings.crop_chromium then
+    resourcecrops.add_crop(S("Chromium (XtraOres) Seeds"), S("Chromium (XtraOres) Essence"), "xores_chromium", "extreme", "xtraores:chromium_bar", "xtraores:chromium_bar 1")
+elseif resourcecrops.settings.crop_xores_chromium then
+    resourcecrops.add_crop(S("Chromium Seeds"), S("Chromium Essence"), "xores_chromium", "extreme", "xtraores:chromium_bar", "xtraores:chromium_bar 1")
+end 
+
 print("Resource Crops loaded!")

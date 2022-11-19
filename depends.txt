@@ -4,3 +4,4 @@ moreores?
 technic_worldgen?
 technic?
 terumet?
+xtraores?

@@ -15,6 +15,10 @@ resourcecrops.has_terumet = false
 if minetest.get_modpath("terumet") then
 	resourcecrops.has_terumet = true
 end
+resourcecrops.has_xtraores = false
+if minetest.get_modpath("xtraores") then
+	resourcecrops.has_xtraores = true
+end
 
 local prefix = "resourcecrops_"
 resourcecrops.settings = {
@@ -47,6 +51,21 @@ resourcecrops.settings = {
     crop_rubber         = true,
     
     crop_terumet    = true,
+
+    crop_nickel     = true,
+    crop_platinum   = true,
+    crop_palladium  = true,
+    crop_cobalt     = true,
+    crop_thorium    = true,
+    crop_antracite  = true,
+    crop_osmium     = true,
+    crop_rhenium    = true,
+    crop_vanadium   = false,
+    crop_rarium     = false,
+    crop_orichalcum = false,
+    crop_titanium   = false,
+    crop_xores_uranium    = false,
+    crop_xores_chromium   = false
 }
 for name, value in pairs(resourcecrops.settings) do
 	local setting_type = type(value)
@@ -65,7 +84,6 @@ if resourcecrops.has_moreores == false then
     resourcecrops.settings.crop_mithril = false
 end
 if resourcecrops.has_technic_ores == false then
-    print("DEBUG: technic not found, disabling it's crops.")
     resourcecrops.settings.crop_brass        = false
     resourcecrops.settings.crop_cast_iron    = false
     resourcecrops.settings.crop_carbon_steel = false
@@ -80,4 +98,20 @@ if resourcecrops.has_technic == false then
 end
 if resourcecrops.has_terumet == false then
     resourcecrops.settings.crop_terumet = false
+end
+if resourcecrops.has_xtraores == false then
+    resourcecrops.settings.crop_nickel      = false
+    resourcecrops.settings.crop_platinum    = false
+    resourcecrops.settings.crop_palladium   = false
+    resourcecrops.settings.crop_cobalt      = false
+    resourcecrops.settings.crop_thorium     = false
+    resourcecrops.settings.crop_antracite   = false
+    resourcecrops.settings.crop_osmium      = false
+    resourcecrops.settings.crop_rhenium     = false
+    resourcecrops.settings.crop_vanadium    = false
+    resourcecrops.settings.crop_rarium      = false
+    resourcecrops.settings.crop_orichalcum  = false
+    resourcecrops.settings.crop_titanium    = false
+    resourcecrops.settings.crop_xores_uranium     = false
+    resourcecrops.settings.crop_xores_chromium    = false
 end

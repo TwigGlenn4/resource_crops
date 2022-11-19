@@ -10,3 +10,4 @@ Textures are completely made by me, TwigGlenn4.
 v1.2.2 Fixes crafting obsidian from fire, earth, and water essences.
 v1.3.0 Adds support for translations, Esperanto translation by jolesh, and Español translation by Google Translate
 v1.3.1 Fixes a crash when the block under a crop is broken, now any block that isn't farmland will cause the crop to drop. Crops that aren't fully grown now drop a seed when broken.
+v1.4.0 Adds support for Xtraores by daviddoesminetest https://forum.minetest.net/viewtopic.php?t=12798

@@ -13,8 +13,8 @@ Growing crops takes time, and getting higher teir crops is a very slow process.
 If you do not want to wait as long, you can change the settings:
 
 ```
-resourcecrops_growth_interval (growth interval) = 30
-resourcecrops_growth_chance (growth chance) = 2
+resourcecrops_growth_interval (growth interval) = 10
+resourcecrops_growth_chance (growth chance) = 4
 ```
 
 ## Items & Nodes
@@ -58,12 +58,15 @@ To change the config options of this mod, you have two options:
 ### Mods
 This mod alters the growth of crops from the *farming* mod in *minetest_game*. Cotton and wheat now have a 4-step growth cycle like the other added crops. 
 
-If [More Ores](https://forum.minetest.net/viewtopic.php?t=549) 
-or [Technic](https://forum.minetest.net/viewtopic.php?t=2538) 
-are installed, their respective crops can be grown. if not, the crops are automatically disabled.
+Includes support for 
+[More Ores](https://forum.minetest.net/viewtopic.php?t=549) 
+[Technic](https://forum.minetest.net/viewtopic.php?t=2538) 
+[Xtraores](https://forum.minetest.net/viewtopic.php?t=12798)
+*Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible.
+*Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
 
 ### Minetest
-This mod has been tested on Minetest 0.4.16, 5.0.0, and 5.4.1.
+This version was developed on Minetest 5.6.1.
 It might work on older versions, but I have not tested them.
 
 ## License

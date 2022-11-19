@@ -87,7 +87,55 @@ resourcecrops_crop_zinc (technic zinc crop) bool true
 # Enables rubber crops, requires the technic modpack.
 resourcecrops_crop_rubber (technic rubber crop) bool true
 
+
 ### TERUMET CROPS
+
 
 # Enables terumetal crops, requires the terumet mod.
 resourcecrops_crop_terumetal (terumet terumetal crop) bool true
+
+
+### XTRAORES CROPS
+
+
+# Enables nickel crops, requires the xtraores mod.
+resourcecrops_crop_nickel (xtraores nickel crop) bool true
+
+# Enables platinum crops, requires the xtraores mod.
+resourcecrops_crop_platinum (xtraores platinum crop) bool true
+
+# Enables palladium crops, requires the xtraores mod.
+resourcecrops_crop_palladium (xtraores palladium crop) bool true
+
+# Enables cobalt crops, requires the xtraores mod.
+resourcecrops_crop_cobalt (xtraores cobalt crop) bool true
+
+# Enables thorium crops, requires the xtraores mod.
+resourcecrops_crop_thorium (xtraores thorium crop) bool true
+
+# Enables antracite crops, requires the xtraores mod.
+resourcecrops_crop_antracite (xtraores antracite crop) bool true
+
+# Enables osmium crops, requires the xtraores mod.
+resourcecrops_crop_osmium (xtraores osmium crop) bool true
+
+# Enables rhenium crops, requires the xtraores mod.
+resourcecrops_crop_rhenium (xtraores rhenium crop) bool true
+
+# Enables vanadium crops, requires the xtraores mod.
+resourcecrops_crop_vanadium (xtraores vanadium crop) bool false
+
+# Enables rarium crops, requires the xtraores mod.
+resourcecrops_crop_rarium (xtraores rarium crop) bool false
+
+# Enables orichalcum crops, requires the xtraores mod.
+resourcecrops_crop_orichalcum (xtraores orichalcum crop) bool false
+
+# Enables titanium crops, requires the xtraores mod.
+resourcecrops_crop_titanium (xtraores titanium crop) bool false
+
+# Enables uranium crops, requires the xtraores mod.
+resourcecrops_crop_xores_uranium (xtraores uranium crop) bool false
+
+# Enables chromium crops, requires the xtraores mod.
+resourcecrops_crop_xores_chromium (xtraores chromium crop) bool false
