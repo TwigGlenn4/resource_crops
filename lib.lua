@@ -24,6 +24,27 @@ function resourcecrops.harvest_crop(pos)
 	end
 end
 
+--Drop a crop a crop's items without replanting, used if not on farmland and not fully grown.
+function resourcecrops.break_crop(pos)
+	local plant = minetest.get_node(pos)
+	local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
+	local crop_essence
+	if plant_type == "essence" then
+		crop_essence = "resource_crops:essence_dust"
+	end
+	if plant_type ~= "essence" then
+		crop_essence = "resource_crops:"..plant_type.."_essence"
+	end
+	local itemstacks = minetest.get_node_drops(plant.name)
+	for _, itemname in ipairs(itemstacks) do
+		minetest.add_item(pos, itemname)
+	end
+
+	--DEBUG
+	minetest.chat_send_all("Breaking crop "..plant.name)
+
+end
+
 --Check if the node is a crop. true/false.
 function resourcecrops.check_crop_node(pos)
 	local node = minetest.get_node(pos)
@@ -59,10 +80,12 @@ function farming.add_plant(full_grown, names)
 			pos.y = pos.y - 1
 			local under = minetest.get_node(pos)
 			pos.y = pos.y + 1
-			if under.name == "air" then
+			if under.name ~= "farming:soil_wet" then
 				local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
 				if string.sub(string.sub(plant_type, -2), 0, 1) ~= "_" then
-					resourcecropsharvest_crop()
+					resourcecrops.harvest_crop(pos)
+				else
+					resourcecrops.break_crop(pos)
 				end
 				minetest.remove_node(pos)
 			end
@@ -186,7 +209,7 @@ function resourcecrops.add_crop(seed_translate, essence_translate, resource_name
 		paramtype = "light",
 		walkable = false,
 		drawtype = "plantlike",
-		drop = "",
+		drop = "resource_crops:"..resource_name.."_seed",
 		tiles = {"resource_crops_crop_1.png"},
 		selection_box = {
 			type = "fixed",
@@ -203,7 +226,7 @@ function resourcecrops.add_crop(seed_translate, essence_translate, resource_name
 		paramtype = "light",
 		walkable = false,
 		drawtype = "plantlike",
-		drop = "",
+		drop = "resource_crops:"..resource_name.."_seed",
 		tiles = {"resource_crops_crop_2.png"},
 		selection_box = {
 			type = "fixed",
@@ -220,7 +243,7 @@ function resourcecrops.add_crop(seed_translate, essence_translate, resource_name
 		paramtype = "light",
 		walkable = false,
 		drawtype = "plantlike",
-		drop = "",
+		drop = "resource_crops:"..resource_name.."_seed",
 		tiles = {"resource_crops_crop_3.png"},
 		selection_box = {
 			type = "fixed",

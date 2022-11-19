@@ -17,7 +17,7 @@ minetest.register_node("resource_crops:essencecrop_1", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "",
+	drop = "resource_crops:essence_seed",
 	tiles = {"resource_crops_crop_1.png"},
 	selection_box = {
 		type = "fixed",
@@ -34,7 +34,7 @@ minetest.register_node("resource_crops:essencecrop_2", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "",
+	drop = "resource_crops:essence_seed",
 	tiles = {"resource_crops_crop_2.png"},
 	selection_box = {
 		type = "fixed",
@@ -51,7 +51,7 @@ minetest.register_node("resource_crops:essencecrop_3", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "",
+	drop = "resource_crops:essence_seed",
 	tiles = {"resource_crops_crop_3.png"},
 	selection_box = {
 		type = "fixed",
