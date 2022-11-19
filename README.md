@@ -58,11 +58,11 @@ To change the config options of this mod, you have two options:
 ### Mods
 This mod alters the growth of crops from the *farming* mod in *minetest_game*. Cotton and wheat now have a 4-step growth cycle like the other added crops. 
 
-Includes support for 
-[More Ores](https://forum.minetest.net/viewtopic.php?t=549) 
-[Technic](https://forum.minetest.net/viewtopic.php?t=2538) 
-[Xtraores](https://forum.minetest.net/viewtopic.php?t=12798)
-*Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible.
+Includes support for \
+[More Ores](https://forum.minetest.net/viewtopic.php?t=549) \
+[Technic](https://forum.minetest.net/viewtopic.php?t=2538) \
+[Xtraores](https://forum.minetest.net/viewtopic.php?t=12798) \
+*Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. \
 *Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
 
 ### Minetest
