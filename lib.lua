@@ -80,7 +80,7 @@ function farming.add_plant(full_grown, names)
 			pos.y = pos.y - 1
 			local under = minetest.get_node(pos)
 			pos.y = pos.y + 1
-			if under.name ~= "farming:soil_wet" then
+			if under.name ~= "farming:soil_wet" and under.name ~= "farming:soil" then
 				local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
 				if string.sub(string.sub(plant_type, -2), 0, 1) ~= "_" then
 					resourcecrops.harvest_crop(pos)
