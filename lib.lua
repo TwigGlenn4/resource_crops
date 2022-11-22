@@ -10,13 +10,6 @@ end
 function resourcecrops.harvest_crop(pos)
 	local plant = minetest.get_node(pos)
 	local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
-	local crop_essence
-	if plant_type == "essence" then
-		crop_essence = "resource_crops:essence_dust"
-	end
-	if plant_type ~= "essence" then
-		crop_essence = "resource_crops:"..plant_type.."_essence"
-	end
 	minetest.set_node(pos, {name=plant.name.."_1"})
 	local itemstacks = minetest.get_node_drops(plant.name)
 	for _, itemname in ipairs(itemstacks) do
@@ -28,20 +21,10 @@ end
 function resourcecrops.break_crop(pos)
 	local plant = minetest.get_node(pos)
 	local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
-	local crop_essence
-	if plant_type == "essence" then
-		crop_essence = "resource_crops:essence_dust"
-	end
-	if plant_type ~= "essence" then
-		crop_essence = "resource_crops:"..plant_type.."_essence"
-	end
 	local itemstacks = minetest.get_node_drops(plant.name)
 	for _, itemname in ipairs(itemstacks) do
 		minetest.add_item(pos, itemname)
 	end
-
-	--DEBUG
-	minetest.chat_send_all("Breaking crop "..plant.name)
 
 end
 
