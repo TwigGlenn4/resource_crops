@@ -7,7 +7,7 @@ Resource Crops is a mod made by TwigGlenn4 that adds crops that grow resources t
 a free and open source infinite world block sandbox game. This mod was inspired by the Mystical Agricutlure mod for Minecraft.
 
 ## Suggestions
-You should install a crafting guide mod, such as [Unified Inventory](https://forum.minetest.net/viewtopic.php?t=3933)
+You should install a crafting guide mod, such as [Unified Inventory](https://content.minetest.net/packages/RealBadAngel/unified_inventory/)
 
 Growing crops takes time, and getting higher teir crops is a very slow process.
 If you do not want to wait as long, you can change the settings:
@@ -58,11 +58,11 @@ To change the config options of this mod, you have two options:
 ### Mods
 This mod alters the growth of crops from the *farming* mod in *minetest_game*. Cotton and wheat now have a 4-step growth cycle like the other added crops. 
 
-Includes support for \
-[More Ores](https://forum.minetest.net/viewtopic.php?t=549) \
-[Technic](https://forum.minetest.net/viewtopic.php?t=2538) \
-[Xtraores](https://forum.minetest.net/viewtopic.php?t=12798) \
-*Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. \
+Includes support for <br>
+[More Ores](https://content.minetest.net/packages/Calinou/moreores/) <br>
+[Technic](https://content.minetest.net/packages/RealBadAngel/technic/) <br>
+[Xtraores](https://forum.minetest.net/viewtopic.php?t=12798) <br>
+*Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. <br>
 *Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
 
 ### Minetest
