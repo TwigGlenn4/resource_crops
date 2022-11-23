@@ -182,7 +182,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "resource_crops:inferno_stone",
 	recipe = {{"resource_crops:fire_essence", "resource_crops:essence_block", "resource_crops:fire_essence"},
-		  {"bucket:bucket_lava", "default:stone", "bucket:bucket_lava"},
+		  {"bucket:bucket_lava", "default:obsidian", "bucket:bucket_lava"},
 		  {"resource_crops:fire_essence", "resource_crops:essence_block", "resource_crops:fire_essence"}},
 	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}}
 })

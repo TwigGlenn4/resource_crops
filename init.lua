@@ -84,7 +84,7 @@ end if resourcecrops.settings.crop_cobalt then
 end if resourcecrops.settings.crop_thorium then
     resourcecrops.add_crop(S("Thorium Seeds"), S("Thorium Essence"), "thorium", "strong", "xtraores:thorium_bar", "xtraores:thorium_bar 1")
 end if resourcecrops.settings.crop_antracite then
-    resourcecrops.add_crop(S("Antracite Seeds"), S("Antracite Essence"), "antracite", "strong", "xtraores:antracite_lump", "xtraores:antracite_lump 1")
+    resourcecrops.add_crop(S("Antracite Seeds"), S("Antracite Essence"), "antracite", "strong", "xtraores:antracite_ore", "xtraores:antracite_ore 1")
 end if resourcecrops.settings.crop_osmium then
     resourcecrops.add_crop(S("Osmium Seeds"), S("Osmium Essence"), "osmium", "extreme", "xtraores:osmium_bar", "xtraores:osmium_bar 3")
 end if resourcecrops.settings.crop_rhenium then
