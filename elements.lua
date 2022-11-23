@@ -222,8 +222,8 @@ minetest.register_craft({
 })
 --FIRE ESSENCE SMELTING--
 fire_essence_smelt("default:clay_lump", "default:clay_brick")
-fire_essence_smelt("default:copper_lump", "default:copper_ingot")
 fire_essence_smelt("default:tin_lump", "default:tin_ingot")
+fire_essence_smelt("default:copper_lump", "default:copper_ingot")
 fire_essence_smelt("default:iron_lump", "default:iron_ingot")
 fire_essence_smelt("default:gold_lump", "default:gold_ingot")
 fire_essence_smelt("default:cobble", "default:stone")
@@ -245,4 +245,22 @@ if resourcecrops.has_technic_ores then
     fire_essence_smelt("default:iron_ingot", "technic:cast_iron_ingot")
     fire_essence_smelt("technic:cast_iron_ingot", "default:iron_ingot")
     fire_essence_smelt("technic:carbon_steel_ingot", "default:iron_ingot")
+end
+if resourcecrops.has_terumet then
+    fire_essence_smelt("terumet:lump_raw", "terumet:ingot_raw")
+end
+if resourcecrops.has_xtraores then
+    fire_essence_smelt("xtraores:nickel_ore", "xtraores:nickel_bar")
+    fire_essence_smelt("xtraores:platinum_ore", "xtraores:platinum_bar")
+    fire_essence_smelt("xtraores:palladium_ore", "xtraores:palladium_bar")
+    fire_essence_smelt("xtraores:cobalt_ore", "xtraores:cobalt_bar")
+    fire_essence_smelt("xtraores:thorium_ore", "xtraores:thorium_bar")
+    fire_essence_smelt("xtraores:osmium_ore", "xtraores:osmium_bar")
+    fire_essence_smelt("xtraores:rhenium_ore", "xtraores:rhenium_bar")
+    fire_essence_smelt("xtraores:vanadium_ore", "xtraores:vanadium_bar")
+    fire_essence_smelt("xtraores:rarium_ore", "xtraores:rarium_bar")
+    fire_essence_smelt("xtraores:orichalcum_ore", "xtraores:orichalcum_bar")
+    fire_essence_smelt("xtraores:titanium_ore", "xtraores:titanium_bar")
+    fire_essence_smelt("xtraores:uranium_ore", "xtraores:uranium_bar")
+    fire_essence_smelt("xtraores:chromium_ore", "xtraores:chromium_bar")
 end
