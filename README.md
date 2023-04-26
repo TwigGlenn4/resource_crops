@@ -69,6 +69,9 @@ Includes support for <br>
 This version was developed on Minetest 5.6.1.
 It might work on older versions, but I have not tested them.
 
+## Changelog
+See ['description.txt'](description.txt) for the changelog.
+
 ## License
 
 - Resource Crops is licensed with the MIT license, see
