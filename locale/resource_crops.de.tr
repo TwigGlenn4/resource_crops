@@ -1,0 +1,100 @@
+# textdomain: resource_crops
+
+### base.lua ###
+Essence Ore=Essenzerz
+Essence Harvester=Essenzernter
+
+### elements.lua ###
+Earth Seeds=Erdsamen
+Earth Essence=Erdessenz
+Grass Seeds=Grassamen
+Nature Seeds=Natursamen
+Nature Essence=Naturessenz
+Water Seeds=Wassersamen
+Water Essence=Wasseressenz
+Fire Seeds=Feuersamen
+Fire Essence=Feueressenz
+Inferno Stone=Infernostein
+
+### essence.lua ###
+Essence Seeds=Essenzsamen
+Essence Dust=Essenzstaub
+Weak Essence=Schwache Essenz
+Regular Essence=Normale Essenz
+Strong Essence=Starke Essenz
+Extreme Essence=Extreme Essenz
+Essence Block=Essenzblock
+
+### init.lua ###
+Coal Seeds=Koglesamen
+Coal Essence=Kohleessenz
+Tin Seeds=Zinnsamen
+Tin Essence=Zinnessenz
+Copper Seeds=Kupfersamen
+Copper Essence=Kupferessenz
+Iron Seeds=Eisensamen
+Iron Essence=Eisenessenz
+Gold Seeds=Goldsamen
+Gold Essence=Goldessenz
+Diamond Seeds=Diamantsamen
+Diamond Essence=Diamantessenz
+Mese Seeds=Mesesamen
+Mese Essence=Meseessenz
+Silver Seeds=Silversamen
+Silver Essence=Silveressenz
+Mithril Seeds=Mithrilsamen
+Mithril Essence=Mithrilessenz
+Brass Seeds=Messingsamen
+Brass Essence=Messingessenz
+Cast Iron Seeds=Gusseisensamen
+Cast Iron Essence=Gusseisenessenz
+Carbon Steel Seeds=Kohlenstoffstahlsamen
+Carbon Steel Essence=Kohlenstoffstahlessenz
+Chromium Seeds=Chromsamen
+Chromium Essence=Chromessenz
+Lead Seeds=Bleisamen
+Lead Essence=Bleiessenz
+Sulfur Seeds=Schwefelsamen
+Sulfur Essence=Schwefelessenz
+Uranium Seeds=Uransamen
+Uranium Essence=Uranessenz
+Zinc Seeds=Zinksamensamen
+Zinc Essence=Zinkessenz
+Rubber Seeds=Gummisamen
+Rubber Essence=Gummiessenz
+Terumetal Seeds=Terumetalsamen
+Terumetal Essence=Terumetalessenz
+Nickel Seeds=Nickelsamen
+Nickel Essence=Nickelessenz
+Platinum Seeds=Platinsamen
+Platinum Essence=Platinessenz
+Palladium Seeds=Palladiumsamen
+Palladium Essence=Palladiumessenz
+Cobalt Seeds=Kobaltsamen
+Cobalt Essence=Kobaltessenz
+Thorium Seeds=Thoriumsamen
+Thorium Essence=Thoriumessenz
+Antracite Seeds=Anthrazitsamen
+Antracite Essence=Anthrazitessenz
+Osmium Seeds=Osmiumsamen
+Osmium Essence=Osmiumessenz
+Rhenium Seeds=Rheniumsamen
+Rhenium Essence=Rheniumessenz
+Vanadium Seeds=Vanadiumsamen
+Vanadium Essence=Vanadiumessenz
+Rarium Seeds=Rariumsamen
+Rarium Essence=Rariumessenz
+Orichalcum Seeds=Orichalkumsamen
+Orichalcum Essence=Orichalkumessenz
+Titanium Seeds=Titansamen
+Titanium Essence=Titanessenz
+Uranium (XtraOres) Seeds=Uransamen (XtraOres)
+Uranium (XtraOres) Essence=Uranessenz (XtraOres)
+Chromium (XtraOres) Seeds=Chromsamen (XtraOres)
+Chromium (XtraOres) Essence=Chromessenz (XtraOres)
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=Schwache Verbesserungsstein
+Regular Upgrade Stone=Normaler Verbesserungsstein
+Strong Upgrade Stone=Starker Verbesserungsstein
+Extreme Upgrade Stone=Extremer Verbesserungsstein

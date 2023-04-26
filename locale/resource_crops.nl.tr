@@ -1,0 +1,100 @@
+# textdomain: resource_crops
+
+### base.lua ###
+Essence Ore=Essentieerts
+Essence Harvester=Essentie Oogstmachine
+
+### elements.lua ###
+Earth Seeds=Aardezaden
+Earth Essence=Aardeessentie
+Grass Seeds=Graszaden
+Nature Seeds=Natuurzaden
+Nature Essence=Natuuressentie
+Water Seeds=Waterzaden
+Water Essence=Wateressentie
+Fire Seeds=Vuurzaden
+Fire Essence=Vuuressentie
+Inferno Stone=Infernosteen
+
+### essence.lua ###
+Essence Seeds=Essentiezaden
+Essence Dust=Essentiestof
+Weak Essence=Zwak Essentie
+Regular Essence=Normaal Essentie
+Strong Essence=Sterk Essentie
+Extreme Essence=Extreem Essentie
+Essence Block=Essentieblok
+
+### init.lua ###
+Coal Seeds=Kolzaden
+Coal Essence=Kolessentie
+Tin Seeds=Tinzaden
+Tin Essence=Tinessentie
+Copper Seeds=Koperzaden
+Copper Essence=Koperessentie
+Iron Seeds=Ijzerzaden
+Iron Essence=Ijzeressentie
+Gold Seeds=Goudzaden
+Gold Essence=Goudessentie
+Diamond Seeds=Diamantzaden
+Diamond Essence=Diamantessentie
+Mese Seeds=Mesezaden
+Mese Essence=Meseessentie
+Silver Seeds=Zilverzaden
+Silver Essence=Zilveressentie
+Mithril Seeds=Mithrilzaden
+Mithril Essence=Mithrilessentie
+Brass Seeds=Messingzaden
+Brass Essence=Messingessentie
+Cast Iron Seeds=Gietijzerzaden
+Cast Iron Essence=Gietijzeressentie
+Carbon Steel Seeds=Koolstofstaalzaden
+Carbon Steel Essence=Koolstofstaalessentie
+Chromium Seeds=Chroomzaden
+Chromium Essence=Chroomessentie
+Lead Seeds=Lodzaden
+Lead Essence=Lodessentie
+Sulfur Seeds=Zwavelzaden
+Sulfur Essence=Zwavelessentie
+Uranium Seeds=Uraniumzaden
+Uranium Essence=Uraniumessentie
+Zinc Seeds=Zinkzaden
+Zinc Essence=Zinkessentie
+Rubber Seeds=Rubberzaden
+Rubber Essence=Rubberessentie
+Terumetal Seeds=Terumetalzaden
+Terumetal Essence=Terumetalessentie
+Nickel Seeds=Nikkelzaden
+Nickel Essence=Nikkelessentie
+Platinum Seeds=Platinazaden
+Platinum Essence=Platinaessentie
+Palladium Seeds=Palladiumzaden
+Palladium Essence=Palladiumessentie
+Cobalt Seeds=Kobaltzaden
+Cobalt Essence=Kobaltessentie
+Thorium Seeds=Thoriumzaden
+Thorium Essence=Thoriumessentie
+Antracite Seeds=Antracietzaden
+Antracite Essence=Antracietessentie
+Osmium Seeds=Osmiumzaden
+Osmium Essence=Osmiumessentie
+Rhenium Seeds=Rheniumzaden
+Rhenium Essence=Rheniumessentie
+Vanadium Seeds=Vanadiumzaden
+Vanadium Essence=Vanadiumessentie
+Rarium Seeds=Rariumzaden
+Rarium Essence=Rariumessentie
+Orichalcum Seeds=Orichalcumzaden
+Orichalcum Essence=Orichalcumessentie
+Titanium Seeds=Titaniumzaden
+Titanium Essence=Titaniumessentie
+Uranium (XtraOres) Seeds=Uraniumzaden (XtraOres)
+Uranium (XtraOres) Essence=Uraniumessentie (XtraOres)
+Chromium (XtraOres) Seeds=Chroomzaden (XtraOres)
+Chromium (XtraOres) Essence=Chroomessentie (XtraOres)
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=Zwakke Upgradesteen
+Regular Upgrade Stone=Normaal Upgradesteen
+Strong Upgrade Stone=Sterk Upgradesteen
+Extreme Upgrade Stone=Extreem Upgradesteen
