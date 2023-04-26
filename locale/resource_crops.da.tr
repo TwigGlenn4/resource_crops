@@ -1,0 +1,100 @@
+# textdomain: resource_crops
+
+### base.lua ###
+Essence Ore=Essensmalm
+Essence Harvester=Essens Høstmaskine
+
+### elements.lua ###
+Earth Seeds=Jordfrø
+Earth Essence=Jordessens
+Grass Seeds=Græsfrø
+Nature Seeds=Naturfrø
+Nature Essence=Naturessens
+Water Seeds=Vandfrø
+Water Essence=Vandessens
+Fire Seeds=Ildfrø
+Fire Essence=Ildessens
+Inferno Stone=Inferno Sten
+
+### essence.lua ###
+Essence Seeds=Essensfrø
+Essence Dust=Essensstøv
+Weak Essence=Svag Essens
+Regular Essence=Regulær Essens
+Strong Essence=Stærk Essens
+Extreme Essence=Ekstrem Essens
+Essence Block=Essensblok
+
+### init.lua ###
+Coal Seeds=Kulfrø
+Coal Essence=Kulessens
+Tin Seeds=Tinfrø
+Tin Essence=Tinessens
+Copper Seeds=Kobberfrø
+Copper Essence=Kobberessens
+Iron Seeds=Jernfrø
+Iron Essence=Jernessens
+Gold Seeds=Guldfrø
+Gold Essence=Guldessens
+Diamond Seeds=Diamantfrø
+Diamond Essence=Diamantessens
+Mese Seeds=Mesefrø
+Mese Essence=Meseessens
+Silver Seeds=Sølvfrø
+Silver Essence=Sølvessens
+Mithril Seeds=Mithrilfrø
+Mithril Essence=Mithrilessens
+Brass Seeds=Messingfrø
+Brass Essence=Messingessens
+Cast Iron Seeds=Støbejernfrø
+Cast Iron Essence=Støbejernessens
+Carbon Steel Seeds=Kulstofstålfrø
+Carbon Steel Essence=Kulstofstålessens
+Chromium Seeds=Chromfrø
+Chromium Essence=Chromessens
+Lead Seeds=Blyfrø
+Lead Essence=Blyessens
+Sulfur Seeds=Svovlfrø
+Sulfur Essence=Svovlessens
+Uranium Seeds=Uranfrø
+Uranium Essence=Uranessens
+Zinc Seeds=Zinkfrø
+Zinc Essence=Zinkessens
+Rubber Seeds=Gummifrø
+Rubber Essence=Gummiessens
+Terumetal Seeds=Terumetalfrø
+Terumetal Essence=Terumetalessens
+Nickel Seeds=Nikkelfrø
+Nickel Essence=Nikkelessens
+Platinum Seeds=Platinfrø
+Platinum Essence=Platinessens
+Palladium Seeds=Palladiumfrø
+Palladium Essence=Palladiumessens
+Cobalt Seeds=Koboltfrø
+Cobalt Essence=Koboltessens
+Thorium Seeds=Thoriumfrø
+Thorium Essence=Thoriumessens
+Antracite Seeds=Antracitfrø
+Antracite Essence=Antracitessens
+Osmium Seeds=Osmiumfrø
+Osmium Essence=Osmiumessens
+Rhenium Seeds=Rheniumfrø
+Rhenium Essence=Rheniumessens
+Vanadium Seeds=Vanadiumfrø
+Vanadium Essence=Vanadiumessens
+Rarium Seeds=Rariumfrø
+Rarium Essence=Rariumessens
+Orichalcum Seeds=Orichalcumfrø
+Orichalcum Essence=Orichalcumessens
+Titanium Seeds=Titaniumfrø
+Titanium Essence=Titaniumessens
+Uranium (XtraOres) Seeds=Uranfrø (XtraOres)
+Uranium (XtraOres) Essence=Uranessens (XtraOres)
+Chromium (XtraOres) Seeds=Chromfrø (XtraOres)
+Chromium (XtraOres) Essence=Chromessens (XtraOres)
+
+### upgrade_stones.lua ###
+Weak Upgrade Stone=Svag Opgradersten
+Regular Upgrade Stone=Regulær Opgradersten
+Strong Upgrade Stone=Stærk Opgradersten
+Extreme Upgrade Stone=Ekstrem Opgradersten
