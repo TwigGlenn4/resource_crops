@@ -176,23 +176,23 @@ minetest.register_craft({
 
 --Essence Downgrades
 minetest.register_craft({
-	output = 'resource_crops:essence_regular 89',
+	output = 'resource_crops:essence_regular 68',
 	recipe = {{'resource_crops:essence_block'}}
 })
 minetest.register_craft({
-	output = "resource_crops:essence_strong 9",
+	output = "resource_crops:essence_strong 4",
 	recipe = {{"resource_crops:essence_extreme"}}
 })
 minetest.register_craft({
-	output = "resource_crops:essence_regular 9",
+	output = "resource_crops:essence_regular 4",
 	recipe = {{"resource_crops:essence_strong"}}
 })
 minetest.register_craft({
-	output = "resource_crops:essence_weak 9",
+	output = "resource_crops:essence_weak 4",
 	recipe = {{"resource_crops:essence_regular"}}
 })
 minetest.register_craft({
-	output = "resource_crops:essence_dust 9",
+	output = "resource_crops:essence_dust 4",
 	recipe = {{"resource_crops:essence_weak"}}
 })
 minetest.register_craft({
