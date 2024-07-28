@@ -13,14 +13,6 @@ resourcecrops_essence_harvester (essence harvester) bool true
 # Enables harvesting a crop by punching it.
 resourcecrops_punch_harvest (punch to harvest) bool true
 
-# The time between each possible crop growth.
-# NOTE: Should be a positive integer number of seconds.
-resourcecrops_growth_interval (growth interval) int 10
-
-# The chance a crop will grow after each interval.
-# NOTE: A crop's chance to grow is 1 out of this number.
-resourcecrops_growth_chance (growth chance) int 4
-
 
 ### DEFAULT CROPS
 
