@@ -1,16 +1,1 @@
-Resource Crops adds crops to to grow many materials, mainly focused on ores. 
-This mod also adds elements for crafting miscellaneous items and nodes.
-
-Made by TwigGlenn4
-
-Completely inspired by Mark719's Magical Crops mod.
-Some of the code is edited from PilzAdam's "FarmingPlus" mod.
-Textures are completely made by me, TwigGlenn4.
-
-v1.2.2 Fixes crafting obsidian from fire, earth, and water essences.
-v1.3.0 Adds support for translations, Esperanto translation by jolesh, and Español translation by Google Translate
-v1.3.1 Fixes a crash when the block under a crop is broken, now any block that isn't farmland will cause the crop to drop. Crops that aren't fully grown now drop a seed when broken.
-v1.4.0 Adds support for Xtraores by daviddoesminetest https://forum.minetest.net/viewtopic.php?t=12798
-v1.4.1 Fixes Xtraores antricite recipe. Fixes missing Fire Essence and Inferno Stone smelting. Also changes Inferno Stone to be made with obsidian instead of stone.
-v1.4.2 Add German, Dutch, and Danish translations by jolesh
-v1.4.3 Essence duplication fixed by Monniasza
+Resource Crops adds crops to to grow ores and base elements, inspired by Mark719's Magical Crops mod for Minecraft

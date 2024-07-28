@@ -8,295 +8,92 @@ end
 
 --Harvest and replant a crop, drop it's items.
 function resourcecrops.harvest_crop(pos)
-	local plant = minetest.get_node(pos)
-	local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
-	minetest.set_node(pos, {name=plant.name.."_1"})
-	local itemstacks = minetest.get_node_drops(plant.name)
-	for _, itemname in ipairs(itemstacks) do
-		minetest.add_item(pos, itemname)
-	end
-end
+  if resourcecrops.check_crop_node(pos) then
+    local plant = minetest.get_node(pos)
 
---Drop a crop a crop's items without replanting, used if not on farmland and not fully grown.
-function resourcecrops.break_crop(pos)
-	local plant = minetest.get_node(pos)
-	local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
-	local itemstacks = minetest.get_node_drops(plant.name)
-	for _, itemname in ipairs(itemstacks) do
-		minetest.add_item(pos, itemname)
-	end
-
+    minetest.set_node(pos, {name=plant.name:sub(1, -2).."1"})
+    local itemstacks = minetest.get_node_drops(plant.name)
+    local seeds_blocked = 0;
+    for _, itemname in ipairs(itemstacks) do
+      if itemname:find("seed") and seeds_blocked == 0 then -- remove 1 seed from drops as it is replanted.
+        seeds_blocked = 1
+      else
+        minetest.add_item(pos, itemname)
+      end
+    end
+  end
 end
 
 --Check if the node is a crop. true/false.
 function resourcecrops.check_crop_node(pos)
-	local node = minetest.get_node(pos)
-	local node_names = {}
-	for str in string.gmatch(node.name, "([^:]+)") do
-		table.insert(node_names, str)
-	end
-	local node_mod = node_names[1]
-	local node_name = node_names[2]
-	if node_mod == "resource_crops" then
-		if string.sub(node_name, -4) == "crop" then
-			return true
-		else
-			return false
-		end
-    else
-        return false
-	end
-end
-
---Rewrite the farming mod's add plant function.
-function farming.add_plant(full_grown, names)
-	local interval = resourcecrops.settings.growth_interval
-	local chance = resourcecrops.settings.growth_chance
-	local all_names = names
-	table.insert(all_names, full_grown)
-	minetest.register_abm({
-		nodenames = all_names,
-		interval = 1,
-		chance = 1,
-		action = function(pos)
-			local plant = minetest.get_node(pos)
-			pos.y = pos.y - 1
-			local under = minetest.get_node(pos)
-			pos.y = pos.y + 1
-			if under.name ~= "farming:soil_wet" and under.name ~= "farming:soil" then
-				local plant_type = plant.name:gsub("resource_crops:", ""):gsub("crop", "")
-				if string.sub(string.sub(plant_type, -2), 0, 1) ~= "_" then
-					resourcecrops.harvest_crop(pos)
-				else
-					resourcecrops.break_crop(pos)
-				end
-				minetest.remove_node(pos)
-			end
-		end,
-	})
-
-	minetest.register_abm({
-		nodenames = names,
-		interval = interval,
-		chance = chance,
-		action = function(pos, node)
-			pos.y = pos.y-1
-			if minetest.get_node(pos).name ~= "farming:soil_wet" then
-				return
-			end
-			pos.y = pos.y+1
-			if not minetest.get_node_light(pos) then
-				return
-			end
-			if minetest.get_node_light(pos) < 8 then
-				return
-			end
-			local step = nil
-			for i,name in ipairs(names) do
-				if name == node.name then
-					step = i
-					break
-				end
-			end
-			if step == nil then
-				return
-			end
-			local new_node = {name=names[step+1]}
-			if new_node.name == nil then
-				new_node.name = full_grown
-			end
-			minetest.set_node(pos, new_node)
-		end
-	})
-
-	table.insert(farming.registered_plants, {
-		full_grown = full_grown,
-		names = names,
-		interval = interval,
-		chance = chance,
-	})
+  local node = minetest.get_node(pos)
+  local def = minetest.registered_nodes[node.name]
+					
+  return def.groups.resource_crops_harvestable == 1 
 end
 
 
---Start a plant when seed is placed.
-function farming.place_seed(itemstack, placer, pointed_thing, plantname)
-	-- Call on_rightclick if the pointed node defines it
-	if pointed_thing.type == "node" and placer and
-		not placer:get_player_control().sneak then
-		local n = minetest.get_node(pointed_thing.under)
-		local nn = n.name
-		if minetest.registered_nodes[nn] and minetest.registered_nodes[nn].on_rightclick then
-			return minetest.registered_nodes[nn].on_rightclick(pointed_thing.under, n,
-			placer, itemstack, pointed_thing) or itemstack, false
-		end
-	end
+function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output        )
+  -- example: 								 ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+  
+  local essence_item = "resource_crops:"..resource_name.."_essence"
+  local essence_ingredient = "resource_crops:essence_"..essence_level
 
-	local pt = pointed_thing
-	-- check if pointing at a node
-	if not pt then
-		return
-	end
-	if pt.type ~= "node" then
-		return
-	end
+  -- Register Plant
+  local essence_groups = {essence = 1}
+  essence_groups["essence_"..essence_level] = 1
+  local plant_def = {
+    description = seed_description,
+    harvest_description = essence_description,
+    paramtype2 = "meshoptions",
+    place_param2 = 0,
+    inventory_image = "resource_crops_"..resource_name.."_seed.png",
+    steps = 4,
+    minlight = 8,
+    maxlight = default.LIGHT_MAX,
+    fertility = {"grassland"},
+    groups = essence_groups,
+  }
+  local seed_item = farming.register_plant(essence_item, plant_def).seed -- "resource_crops:seed_coal_essence"
+  -- item texture: 	 "resource_crops_coal_essence.png"
+  -- plant textures: "resource_crops_coal_essence_1.png" to "resource_crops_coal_essence_4.png"
+  -- seed texture:   "resource_crops_coal_seed.png"
 
-	local under = minetest.get_node(pt.under)
-	local above = minetest.get_node(pt.above)
+  -- Add fully grown to group resource_crops_harvestable
+  local fully_grown_def = minetest.registered_nodes[essence_item.."_4"]
+  local fully_grown_groups = table.copy(fully_grown_def.groups)
+  fully_grown_groups.resource_crops_harvestable = 1
+  minetest.override_item(essence_item.."_4", { groups=fully_grown_groups })
 
-	-- return if any of the nodes is not registered
-	if not minetest.registered_nodes[under.name] then
-		return
-	end
-	if not minetest.registered_nodes[above.name] then
-		return
-	end
+  --Register Recipes
+  if recipe_output then
+    minetest.register_craft({ -- craft 9 essence into recipe_output
+      output = recipe_output,
+      recipe = {{essence_item, essence_item, essence_item},
+            {essence_item, essence_item, essence_item},
+            {essence_item, essence_item, essence_item}}
+    })
+  end
+  if recipe_input then
+    minetest.register_craft({ -- craft the seed from 4 resource, 4 generic essence, and a essence seed
+      output = seed_item,
+      recipe = {{recipe_input, essence_ingredient, recipe_input},
+            {essence_ingredient, "resource_crops:seed_essence", essence_ingredient},
+            {recipe_input, essence_ingredient, recipe_input}}
+    })
+  end
+  minetest.register_craft({ -- convert a seed into one essence.
+    output = essence_item,
+    recipe = {
+      {seed_item}
+    }
+  })
 
-	-- check if pointing at the top of the node
-	if pt.above.y ~= pt.under.y+1 then
-		return
-	end
-
-	-- check if you can replace the node above the pointed node
-	if not minetest.registered_nodes[above.name].buildable_to then
-		return
-	end
-
-	-- check if pointing at soil
-	if minetest.get_item_group(under.name, "soil") < 2 then
-		return
-	end
-
-	-- add the node and remove 1 item from the itemstack
-	minetest.add_node(pt.above, {name=plantname, param2 = 1})
-	if not minetest.setting_getbool("creative_mode") then
-		itemstack:take_item()
-	end
-	return itemstack
+  -- Register aliases for v1.x.x
+  minetest.register_alias("resource_crops:"..resource_name.."_seed", seed_item)
+  minetest.register_alias("resource_crops:"..resource_name.."crop_1", essence_item.."_1")
+  minetest.register_alias("resource_crops:"..resource_name.."crop_2", essence_item.."_2")
+  minetest.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
+  minetest.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
 end
 
-
---Add a resource crop.
-function resourcecrops.add_crop(seed_translate, essence_translate, resource_name, essence_type, recipe_input, recipe_output)
-	--Seed
-	minetest.register_craftitem("resource_crops:"..resource_name.."_seed", {
-		description = seed_translate,
-		inventory_image = "resource_crops_"..resource_name.."_seed.png",
-		groups = {essence_seed = 1},
-		on_place = function(itemstack, placer, pointed_thing)
-			return farming.place_seed(itemstack, placer, pointed_thing, "resource_crops:"..resource_name.."crop_1")
-		end
-	})
-
-	--Crop Step 1
-	minetest.register_node("resource_crops:"..resource_name.."crop_1", {
-		paramtype = "light",
-		walkable = false,
-		drawtype = "plantlike",
-		drop = "resource_crops:"..resource_name.."_seed",
-		tiles = {"resource_crops_crop_1.png"},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, -0.5+1/4, 0.5}
-			},
-		},
-		groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	--Crop Step 2
-	minetest.register_node("resource_crops:"..resource_name.."crop_2", {
-		paramtype = "light",
-		walkable = false,
-		drawtype = "plantlike",
-		drop = "resource_crops:"..resource_name.."_seed",
-		tiles = {"resource_crops_crop_2.png"},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, -0.5+1/4, 0.5}
-			},
-		},
-		groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	--Crop Step 3
-	minetest.register_node("resource_crops:"..resource_name.."crop_3", {
-		paramtype = "light",
-		walkable = false,
-		drawtype = "plantlike",
-		drop = "resource_crops:"..resource_name.."_seed",
-		tiles = {"resource_crops_crop_3.png"},
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, -0.5+1/4, 0.5}
-			},
-		},
-		groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	--Crop Full Grown
-	minetest.register_node("resource_crops:"..resource_name.."crop", {
-		paramtype = "light",
-		walkable = false,
-		drawtype = "plantlike",
-		tiles = {"resource_crops_"..resource_name.."_crop.png"},
-	    selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, -0.5+1/4, 0.5}
-			},
-		},
-		drop = {
-			max_items = 4,
-			items = {
-				{ items = {"resource_crops:"..resource_name.."_seed"} },
-				{ items = {"resource_crops:"..resource_name.."_seed"}, rarity = 30},
-				{ items = {"resource_crops:"..resource_name.."_essence"} },
-				{ items = {"resource_crops:"..resource_name.."_essence"}, rarity = 30}
-			}
-		},
-		groups = {snappy=3, flammable=2, not_in_creative_inventory=1, resourceplant=1,},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	local essence_groups = {}
-	essence_groups["essence"] = 1
-	essence_groups["essence_"..essence_type] = 1
-
-	--Register Essence
-	minetest.register_craftitem("resource_crops:"..resource_name.."_essence", {
-		description = (essence_translate),
-		inventory_image = "resource_crops_"..resource_name.."_essence.png",
-		groups = essence_groups
-	})
-
-	--Register Recipies
-	if recipe_output then
-		minetest.register_craft({
-			output = recipe_output,
-			recipe = {{"resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence"},
-					  {"resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence"},
-					  {"resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence", "resource_crops:"..resource_name.."_essence"}}
-		})
-	end
-	if recipe_input then
-		minetest.register_craft({
-			output = "resource_crops:"..resource_name.."_seed",
-			recipe = {{recipe_input, "resource_crops:essence_"..essence_type, recipe_input},
-					  {"resource_crops:essence_"..essence_type, "resource_crops:essence_seed", "resource_crops:essence_"..essence_type},
-					  {recipe_input, "resource_crops:essence_"..essence_type, recipe_input}}
-		})
-	end
-	minetest.register_craft({
-		output = "resource_crops:"..resource_name.."_essence",
-		recipe = {
-			{"resource_crops:"..resource_name.."_seed"}
-		}
-	})
-	--Add Plant
-	farming.add_plant("resource_crops:"..resource_name.."crop", {"resource_crops:"..resource_name.."crop_1", "resource_crops:"..resource_name.."crop_2", "resource_crops:"..resource_name.."crop_3"})
-end

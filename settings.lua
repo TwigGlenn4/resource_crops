@@ -26,8 +26,6 @@ resourcecrops.settings = {
     essence_ore       = true,
     essence_harvester = true,
     punch_harvest     = true,
-    growth_interval   = 30,
-    growth_chance     = 10,
 
     crop_coal    = true,
     crop_tin     = true,

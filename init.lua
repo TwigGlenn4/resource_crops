@@ -6,8 +6,6 @@ local function runfile(file)
 end
 runfile("lib")
 runfile("settings")
---FIX FARMING MOD CROPS
-runfile("farming")
 --ESSENCE--
 runfile("essence")
 --UPGRADE STONES--
@@ -110,4 +108,4 @@ elseif resourcecrops.settings.crop_xores_chromium then
     resourcecrops.add_crop(S("Chromium Seeds"), S("Chromium Essence"), "xores_chromium", "extreme", "xtraores:chromium_bar", "xtraores:chromium_bar 1")
 end 
 
-print("Resource Crops loaded!")
+-- print("Resource Crops loaded!")

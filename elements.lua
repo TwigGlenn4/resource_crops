@@ -10,6 +10,7 @@ minetest.register_craftitem("resource_crops:grass_seed", {
 })
 
 resourcecrops.add_crop(S("Nature Seeds"), S("Nature Essence"), "nature", "extreme", "group:leaves", "resource_crops:grass_seed")
+
 minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
     if node.name == "default:dirt" then
 	local puncher_name = puncher:get_player_name()
@@ -27,16 +28,16 @@ end)
 --WATER--
 resourcecrops.add_crop(S("Water Seeds"), S("Water Essence"), "water", "extreme", nil, "default:snow 9")
 minetest.register_craft({
-    output = "resource_crops:water_seed",
+    output = "resource_crops:seed_water_essence",
     recipe = {{"bucket:bucket_water", "resource_crops:essence_extreme", "bucket:bucket_water"},
-	      {"resource_crops:essence_extreme", "resource_crops:essence_seed", "resource_crops:essence_extreme"},
+	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
 	      {"bucket:bucket_water", "resource_crops:essence_extreme", "bucket:bucket_water"}},
     replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}}
 })
 minetest.register_craft({
-    output = "resource_crops:water_seed",
+    output = "resource_crops:seed_water_essence",
     recipe = {{"bucket:bucket_river_water", "resource_crops:essence_extreme", "bucket:bucket_river_water"},
-	      {"resource_crops:essence_extreme", "resource_crops:essence_seed", "resource_crops:essence_extreme"},
+	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
 	      {"bucket:bucket_river_water", "resource_crops:essence_extreme", "bucket:bucket_river_water"}},
     replacements = {{"bucket:bucket_river_water", "bucket:bucket_empty"}, {"bucket:bucket_river_water", "bucket:bucket_empty"}, {"bucket:bucket_river_water", "bucket:bucket_empty"}, {"bucket:bucket_river_water", "bucket:bucket_empty"}}
 })
@@ -44,9 +45,9 @@ minetest.register_craft({
 --FIRE--
 resourcecrops.add_crop(S("Fire Seeds"), S("Fire Essence"), "fire", "extreme", nil, "fire:permanent_flame")
 minetest.register_craft({
-    output = "resource_crops:fire_seed",
+    output = "resource_crops:seed_fire_essence",
     recipe = {{"bucket:bucket_lava", "resource_crops:essence_extreme", "bucket:bucket_lava"},
-	      {"resource_crops:essence_extreme", "resource_crops:essence_seed", "resource_crops:essence_extreme"},
+	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
 	      {"bucket:bucket_lava", "resource_crops:essence_extreme", "bucket:bucket_lava"}},
     replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}}
 })
