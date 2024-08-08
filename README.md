@@ -62,7 +62,7 @@ Includes support for <br>
 *Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
 
 ### Minetest
-Resource Crops v2.0.0 was developed on Minetest 5.8.0.
+Resource Crops v2.0.1 was developed on Minetest 5.8.0.
 It might work on older versions, but I have not tested them.
 
 ## Changelog

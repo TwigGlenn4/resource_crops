@@ -1,3 +1,5 @@
+# v2.0.1
+* Add a null check in `resourcecrops.check_crop_node(pos)` to prevent a crash when punching unknown nodes.
 # v2.0.0
 * Rewrote backend to stop changing behavior of `farming` mod and properly use the `farming` API
 * Now compatible with mods that add new soil nodes (ex. `everness`) and no longer breaks wheat and cotton on those new soil nodes

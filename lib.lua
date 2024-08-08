@@ -28,7 +28,9 @@ end
 function resourcecrops.check_crop_node(pos)
   local node = minetest.get_node(pos)
   local def = minetest.registered_nodes[node.name]
-					
+	if def == nil then
+    return false
+  end
   return def.groups.resource_crops_harvestable == 1 
 end
 
