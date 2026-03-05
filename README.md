@@ -24,7 +24,7 @@ Seeds are placed on farmland, and only grow when it is wet and there is a light 
 Essences are usually crafted into materials by filling the crafting grid, see special recipies with a crafting guide mod.
 ### Elemental Essences
 Mostly used as another way to get misc items. Fire essence can be crafted with an item to smelt it.
-Essence Smelting only currently works with metals that have existing crops and recipies from `minetest_game`
+Essence Smelting only currently works with metals that have existing crops and recipes from `minetest_game`
 ### Inferno Stone
 The Inferno Stone can be crafted with an item to get the twice the result of smelting that item, it is not consumed by the recipe.
 This only works on the same items as fire essence.
@@ -60,6 +60,9 @@ Includes support for <br>
 
 *Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. <br>
 *Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
+
+### Add support for Resource Crops to your mod or add-on
+See [API.md](API.md) for info about adding crops and essences for new resources.
 
 ### Minetest
 Resource Crops v2.0.1 was developed on Minetest 5.8.0.

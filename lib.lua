@@ -3,7 +3,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 --Register an alias for steel ingot and undo technic's name change.
 minetest.register_alias("default:iron_ingot", "default:steel_ingot")
 if resourcecrops.has_technic then
-minetest.override_item("default:iron_ingot", { description = "Steel Ingot" })
+  minetest.override_item("default:iron_ingot", { description = "Steel Ingot" })
 end
 
 --Harvest and replant a crop, drop it's items.

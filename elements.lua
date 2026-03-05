@@ -52,15 +52,15 @@ minetest.register_craft({
     replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}}
 })
 local function fire_essence_smelt(input, result)
-minetest.register_craft({
-    output = result,
-    recipe = {{"resource_crops:fire_essence", input}}
-})
-minetest.register_craft({
-    output = result.." 2",
-    recipe = {{"resource_crops:inferno_stone", input}},
-    replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
-})
+    minetest.register_craft({
+        output = result,
+        recipe = {{"resource_crops:fire_essence", input}}
+    })
+    minetest.register_craft({
+        output = result.." 2",
+        recipe = {{"resource_crops:inferno_stone", input}},
+        replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
+    })
 end
 
 
