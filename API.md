@@ -18,6 +18,7 @@ if core.get_modpath("resource_crops") ~= nil then
 	-- Your code
 end
 ```
+
 ## Add crops and items using `resourcecrops.add_crop()`
 The `resourcecrops.add_crop()` function automatically handles most of creating a crop, essence, and crafting recipes for a resource. <br>
 See examples in [init.lua](init.lua). 
@@ -26,6 +27,7 @@ See examples in [init.lua](init.lua).
 resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output        )
   -- example:         ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
 ```
+
 ### Parameters
  - `seed_description`: The name of the seed item. Shown when item is hovered in the inventory.
  - `essence_description`: The name of the essence item. Shown when item is hovered in the inventory.
@@ -35,14 +37,12 @@ resourcecrops.add_crop(seed_description, essence_description, resource_name,   e
  - `recipe_output`: The itemstring of the output of crafting 9 resource essence together, optionally including the number of items. If not defined or `nil`, the recipe will not be registered automatically.
 
 ### Created Items
-
 | Item Name             | Itemstring                                          | Name Example (Coal) | Itemstring Example (Coal)            |
 |-----------------------|-----------------------------------------------------|---------------------|--------------------------------------|
 | `essence_description` | `"resource_crops:"..resource_name.."_essence"`      | "Coal Essence"      | `"resource_crops:coal_essence"`      |
 | `seed_description`    | `"resource_crops:seed_"..resource_name.."_essence"` | "Coal Seeds"        | `"resource_crops:seed_coal_essence"` |
 
 ### Recipes
-
 Resource Seed (if `recipe_input` is not `nil`)
 | Location | Item Name | Itemstring |
 | --- | --- | ---|
@@ -73,7 +73,6 @@ Resource Essence (shapeless)
 To use alternate recipes, you can leave `recipe_input` and/or `recipe_output` blank, then define your own recipes to craft a seed and/or use the essence. Examples of this are in [elements.lua](elements.lua)
 
 ## Fire Essence Smelting
-
 Fire Essence Smelting is a shortcut to register two shapeless recipes
  - Fire Essence + `input` = `result`
  - Inferno Stone + `input` = 2 `result`

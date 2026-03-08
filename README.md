@@ -36,19 +36,17 @@ The options have short descriptions found in the client interface settings or [`
 To change the config options of this mod, you have two options:
 
 ### Client Interface
-1. With Luanti running, click the menu tab called "Settings".
-2. Click the "Advanced Setting".
-3. Open the "Mods" section.
-4. Open the "resource_crops" subsection.
-5. Change values as you wish!
+1. Go to the Settings menu and enable "Show advanced settings".
+2. In the "Content: Mods" section, find "Resource Crops"
+3. Enable or disable features.
 
 ### Text Editor or Server
 1. Find "resource_crops" in your "mods" folder.
-2. Open "settingtypes.txt", copy options you want to change, but not the lines starting with "#".
+2. Open "settingtypes.txt" and copy options you want to change. lines starting with `#` are optional comments and not required for the settings.
 3. Find "minetest.conf" in Luanti's main folder, it might be beside the "mods" folder.
-4. Paste the options you copied into minetest.conf, change them to your liking.
+4. Paste the options you copied into minetest.conf, and change them to your liking.
 
-## Compat
+## Compatability
 ### Mods
 ~~This mod alters the growth of crops from the `farming` mod in `minetest_game`. Cotton and wheat now have a 4-step growth cycle like the other added crops.~~<br>
 Starting with v2.0.0, Resource Crops properly uses the `farming` API and no longer alters behavior.
@@ -59,13 +57,13 @@ Includes support for <br>
 * [Xtraores](https://forum.luanti.org/viewtopic.php?t=12798)
 
 *Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. <br>
-*Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
+*Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled by settings.
 
 ### Add support for Resource Crops to your mod or add-on
 See [API.md](API.md) for info about adding crops and essences for new resources.
 
 ### Luanti
-Resource Crops v2.0.1 was developed on Luanti 5.8.0.
+Resource Crops v2.0.2 was developed on Luanti 5.14.0.
 It might work on older versions, but I have not tested them.
 
 ## Changelog
