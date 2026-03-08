@@ -1,22 +1,22 @@
 --Check for optional dependencies
 resourcecrops.has_moreores = false
-if minetest.get_modpath("moreores") then
+if core.get_modpath("moreores") then
 	resourcecrops.has_moreores = true
 end
 resourcecrops.has_technic_ores = false
-if minetest.get_modpath("technic_worldgen") ~= nil then
+if core.get_modpath("technic_worldgen") ~= nil then
 	resourcecrops.has_technic_ores = true --Use technic_worldgen because that part loads materials
 end
 resourcecrops.has_technic = false
-if minetest.get_modpath("technic") then
+if core.get_modpath("technic") then
 	resourcecrops.has_technic = true --for rubber
 end
 resourcecrops.has_terumet = false
-if minetest.get_modpath("terumet") then
+if core.get_modpath("terumet") then
 	resourcecrops.has_terumet = true
 end
 resourcecrops.has_xtraores = false
-if minetest.get_modpath("xtraores") then
+if core.get_modpath("xtraores") then
 	resourcecrops.has_xtraores = true
 end
 
@@ -68,12 +68,12 @@ resourcecrops.settings = {
 for name, value in pairs(resourcecrops.settings) do
 	local setting_type = type(value)
 	if setting_type == "boolean" then
-		resourcecrops.settings[name] = minetest.settings:get_bool(prefix..name)
+		resourcecrops.settings[name] = core.settings:get_bool(prefix..name)
 		if resourcecrops.settings[name] == nil then
 			resourcecrops.settings[name] = value
 		end
 	else
-		resourcecrops.settings[name] = minetest.settings:get(prefix..name)
+		resourcecrops.settings[name] = core.settings:get(prefix..name)
 	end
 end
 

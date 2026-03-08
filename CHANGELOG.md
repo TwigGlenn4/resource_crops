@@ -1,3 +1,6 @@
+# v2.0.2
+* Add documentation for other mods to add support for Resource Crops in [API.md](API.md).
+* Refactor to `core` namespace instead of `minetest` and update Minetest to Luanti
 # v2.0.1
 * Add a null check in `resourcecrops.check_crop_node(pos)` to prevent a crash when punching unknown nodes.
 # v2.0.0
@@ -14,7 +17,7 @@
 # v1.4.1
 * Fixes Xtraores antricite recipe. Fixes missing Fire Essence and Inferno Stone smelting. Also changes Inferno Stone to be made with obsidian instead of stone.
 # v1.4.0
-* Adds support for Xtraores by daviddoesminetest https://forum.minetest.net/viewtopic.php?t=12798
+* Adds support for Xtraores by daviddoesminetest https://forum.luanti.org/viewtopic.php?t=12798
 # v1.3.1
 * Fixes a crash when the block under a crop is broken, now any block that isn't farmland will cause the crop to drop. Crops that aren't fully grown now drop a seed when broken.
 # v1.3.0

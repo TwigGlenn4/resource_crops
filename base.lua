@@ -1,15 +1,15 @@
-local S = minetest.get_translator(minetest.get_current_modname())
+local S = core.get_translator(core.get_current_modname())
 
 --Essence ore
 if resourcecrops.settings.essence_ore then
-	minetest.register_node("resource_crops:essence_ore", {
+	core.register_node("resource_crops:essence_ore", {
 		description = S("Essence Ore"),
 		tiles = {"default_stone.png^resource_crops_essence_ore.png"},
 		groups = {cracky = 2},
 		drop = "resource_crops:essence",
 		sounds = default.node_sound_stone_defaults(),
 	})
-	minetest.register_ore({
+	core.register_ore({
 		ore_type         = "scatter",
 		ore              = "resource_crops:essence_ore",
 		wherein          = "default:stone",
@@ -23,7 +23,7 @@ end
 
 --Essence harvester
 if resourcecrops.settings.essence_harvester then
-	minetest.register_node("resource_crops:essence_harvester", {
+	core.register_node("resource_crops:essence_harvester", {
 		description = S("Essence Harvester"),
 		tiles = {"resource_crops_essence_harvester.png", "resource_crops_essence_harvester_bottom.png",
 							"resource_crops_essence_harvester.png", "resource_crops_essence_harvester.png",
@@ -31,7 +31,7 @@ if resourcecrops.settings.essence_harvester then
 			light_source = 10,
 		groups = {cracky = 2},
 	})
-	minetest.register_craft({
+	core.register_craft({
 		output = "resource_crops:essence_harvester",
 		recipe = {
 			{"default:diamond", "default:steel_ingot", "default:diamond"},
@@ -39,15 +39,15 @@ if resourcecrops.settings.essence_harvester then
 			{"default:diamond", "default:steel_ingot", "default:diamond"}
 		}
 	})
-	minetest.register_abm({
+	core.register_abm({
 			nodenames = {"resource_crops:essence_harvester"},
 			neighbors = {"group:resource_crops_harvestable"},
 			interval = 5,
 			chance = 1,
 			action = function(pos)
 				pos.y = pos.y - 1
-				local plant = minetest.get_node(pos).name
-				local def = minetest.registered_nodes[plant]
+				local plant = core.get_node(pos).name
+				local def = core.registered_nodes[plant]
 						
 				if def.groups.resource_crops_harvestable == 1 then
 					resourcecrops.harvest_crop(pos)
@@ -58,11 +58,11 @@ end
 
 --Punch crop to harvest it.
 if resourcecrops.settings.punch_harvest then
-	minetest.register_on_punchnode(function(pos)
+	core.register_on_punchnode(function(pos)
     if resourcecrops.check_crop_node(pos) then
 			resourcecrops.harvest_crop(pos)
 		end
 	end)
 end
 
-minetest.register_alias_force("resourcecrops:essence_harvester", "resource_crops:essence_harvester")
+core.register_alias_force("resourcecrops:essence_harvester", "resource_crops:essence_harvester")

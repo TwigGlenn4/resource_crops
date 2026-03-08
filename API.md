@@ -14,7 +14,7 @@ First, set your mod to depend or optional_depend on `resource_crops`
 If you only optionally depend on Resource Crops, then you should wrap your code that relates to this mod in the following `if` statement to prevent invalid references when Resource Crops is not loaded.
 
 ```lua
-if minetest.get_modpath("resource_crops") ~= nil then
+if core.get_modpath("resource_crops") ~= nil then
 	-- Your code
 end
 ```

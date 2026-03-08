@@ -1,24 +1,24 @@
-local S = minetest.get_translator(minetest.get_current_modname())
+local S = core.get_translator(core.get_current_modname())
 
 --Register an alias for steel ingot and undo technic's name change.
-minetest.register_alias("default:iron_ingot", "default:steel_ingot")
+core.register_alias("default:iron_ingot", "default:steel_ingot")
 if resourcecrops.has_technic then
-  minetest.override_item("default:iron_ingot", { description = "Steel Ingot" })
+  core.override_item("default:iron_ingot", { description = "Steel Ingot" })
 end
 
 --Harvest and replant a crop, drop it's items.
 function resourcecrops.harvest_crop(pos)
   if resourcecrops.check_crop_node(pos) then
-    local plant = minetest.get_node(pos)
+    local plant = core.get_node(pos)
 
-    minetest.set_node(pos, {name=plant.name:sub(1, -2).."1"})
-    local itemstacks = minetest.get_node_drops(plant.name)
+    core.set_node(pos, {name=plant.name:sub(1, -2).."1"})
+    local itemstacks = core.get_node_drops(plant.name)
     local seeds_blocked = 0;
     for _, itemname in ipairs(itemstacks) do
       if itemname:find("seed") and seeds_blocked == 0 then -- remove 1 seed from drops as it is replanted.
         seeds_blocked = 1
       else
-        minetest.add_item(pos, itemname)
+        core.add_item(pos, itemname)
       end
     end
   end
@@ -26,8 +26,8 @@ end
 
 --Check if the node is a crop. true/false.
 function resourcecrops.check_crop_node(pos)
-  local node = minetest.get_node(pos)
-  local def = minetest.registered_nodes[node.name]
+  local node = core.get_node(pos)
+  local def = core.registered_nodes[node.name]
 	if def == nil then
     return false
   end
@@ -62,14 +62,14 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
   -- seed texture:   "resource_crops_coal_seed.png"
 
   -- Add fully grown to group resource_crops_harvestable
-  local fully_grown_def = minetest.registered_nodes[essence_item.."_4"]
+  local fully_grown_def = core.registered_nodes[essence_item.."_4"]
   local fully_grown_groups = table.copy(fully_grown_def.groups)
   fully_grown_groups.resource_crops_harvestable = 1
-  minetest.override_item(essence_item.."_4", { groups=fully_grown_groups })
+  core.override_item(essence_item.."_4", { groups=fully_grown_groups })
 
   --Register Recipes
   if recipe_output then
-    minetest.register_craft({ -- craft 9 essence into recipe_output
+    core.register_craft({ -- craft 9 essence into recipe_output
       output = recipe_output,
       recipe = {{essence_item, essence_item, essence_item},
             {essence_item, essence_item, essence_item},
@@ -77,14 +77,14 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
     })
   end
   if recipe_input then
-    minetest.register_craft({ -- craft the seed from 4 resource, 4 generic essence, and a essence seed
+    core.register_craft({ -- craft the seed from 4 resource, 4 generic essence, and a essence seed
       output = seed_item,
       recipe = {{recipe_input, essence_ingredient, recipe_input},
             {essence_ingredient, "resource_crops:seed_essence", essence_ingredient},
             {recipe_input, essence_ingredient, recipe_input}}
     })
   end
-  minetest.register_craft({ -- convert a seed into one essence.
+  core.register_craft({ -- convert a seed into one essence.
     output = essence_item,
     recipe = {
       {seed_item}
@@ -92,10 +92,10 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
   })
 
   -- Register aliases for v1.x.x
-  minetest.register_alias("resource_crops:"..resource_name.."_seed", seed_item)
-  minetest.register_alias("resource_crops:"..resource_name.."crop_1", essence_item.."_1")
-  minetest.register_alias("resource_crops:"..resource_name.."crop_2", essence_item.."_2")
-  minetest.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
-  minetest.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
+  core.register_alias("resource_crops:"..resource_name.."_seed", seed_item)
+  core.register_alias("resource_crops:"..resource_name.."crop_1", essence_item.."_1")
+  core.register_alias("resource_crops:"..resource_name.."crop_2", essence_item.."_2")
+  core.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
+  core.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
 end
 

@@ -1,4 +1,4 @@
-local S = minetest.get_translator(minetest.get_current_modname())
+local S = core.get_translator(core.get_current_modname())
 
 --reused resourcecrops.add_crop code for node naming.
 
@@ -24,35 +24,35 @@ farming.register_plant(essence_item, plant_def)
 
 
 -- Add fully grown to group resource_crops_harvestable
-local fully_grown_def = minetest.registered_nodes[essence_item.."_4"]
+local fully_grown_def = core.registered_nodes[essence_item.."_4"]
 local fully_grown_groups = table.copy(fully_grown_def.groups)
 fully_grown_groups.resource_crops_harvestable = 1
-minetest.override_item(essence_item.."_4", { groups=fully_grown_groups })
+core.override_item(essence_item.."_4", { groups=fully_grown_groups })
 
 
 --Register essences
-minetest.register_craftitem("resource_crops:essence_weak", {
+core.register_craftitem("resource_crops:essence_weak", {
 	description = S("Weak Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_weak.png"
 })
-minetest.register_craftitem("resource_crops:essence_regular", {
+core.register_craftitem("resource_crops:essence_regular", {
 	description = S("Regular Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_regular.png"
 })
-minetest.register_craftitem("resource_crops:essence_strong", {
+core.register_craftitem("resource_crops:essence_strong", {
 	description = S("Strong Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_strong.png"
 })
-minetest.register_craftitem("resource_crops:essence_extreme", {
+core.register_craftitem("resource_crops:essence_extreme", {
 	description = S("Extreme Essence"),
 	groups = {magic_essence = 1, essence = 1},
 	inventory_image = "resource_crops_essence_extreme.png"
 })
 
-minetest.register_node("resource_crops:essence_block", {
+core.register_node("resource_crops:essence_block", {
 	description = S("Essence Block"),
 	tiles = {"resource_crops_essence_block.png"},
 	groups = {snappy=1,oddly_breakable_by_hand=2},
@@ -60,7 +60,7 @@ minetest.register_node("resource_crops:essence_block", {
 
 
 --Register Recipies
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_weak",
 	recipe = {
 		{"", "resource_crops:essence", ""},
@@ -69,7 +69,7 @@ minetest.register_craft({
 	},
 	replacements = {{"resource_crops:upgrade_stone_weak", "resource_crops:upgrade_stone_weak"}},
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_regular",
 	recipe = {
 		{"", "resource_crops:essence_weak", ""},
@@ -78,7 +78,7 @@ minetest.register_craft({
 	},
 	replacements = {{"resource_crops:upgrade_stone_regular", "resource_crops:upgrade_stone_regular"}},
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_strong",
 	recipe = {
 		{"", "resource_crops:essence_regular", ""},
@@ -87,7 +87,7 @@ minetest.register_craft({
 	},
 	replacements = {{"resource_crops:upgrade_stone_strong", "resource_crops:upgrade_stone_strong"}},
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_extreme",
 	recipe = {
 		{"", "resource_crops:essence_strong", ""},
@@ -96,7 +96,7 @@ minetest.register_craft({
 	},
 	replacements = {{"resource_crops:upgrade_stone_extreme", "resource_crops:upgrade_stone_extreme"}},
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_block",
 	recipe = {
 		{"resource_crops:essence_regular", "resource_crops:essence_extreme", "resource_crops:essence_regular"},
@@ -107,32 +107,32 @@ minetest.register_craft({
 })
 
 --Essence Downgrades
-minetest.register_craft({
+core.register_craft({
 	output = 'resource_crops:essence_regular 68',
 	recipe = {{'resource_crops:essence_block'}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_strong 4",
 	recipe = {{"resource_crops:essence_extreme"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_regular 4",
 	recipe = {{"resource_crops:essence_strong"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence_weak 4",
 	recipe = {{"resource_crops:essence_regular"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence 4",
 	recipe = {{"resource_crops:essence_weak"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:essence",
 	recipe = {{"resource_crops:seed_essence"}}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:seed_essence",
 	recipe = {
 		{"resource_crops:essence", "resource_crops:essence_weak", "resource_crops:essence"},
@@ -144,9 +144,9 @@ minetest.register_craft({
 
 -- Aliases for v1.x.x
 
-minetest.register_alias("resource_crops:essence_seed", "resource_crops:seed_essence")
-minetest.register_alias("resource_crops:essencecrop_1", "resource_crops:essence_1")
-minetest.register_alias("resource_crops:essencecrop_2", "resource_crops:essence_2")
-minetest.register_alias("resource_crops:essencecrop_3", "resource_crops:essence_3")
-minetest.register_alias("resource_crops:essencecrop", "resource_crops:essence_4")
-minetest.register_alias("resource_crops:essence_dust", "resource_crops:essence")
+core.register_alias("resource_crops:essence_seed", "resource_crops:seed_essence")
+core.register_alias("resource_crops:essencecrop_1", "resource_crops:essence_1")
+core.register_alias("resource_crops:essencecrop_2", "resource_crops:essence_2")
+core.register_alias("resource_crops:essencecrop_3", "resource_crops:essence_3")
+core.register_alias("resource_crops:essencecrop", "resource_crops:essence_4")
+core.register_alias("resource_crops:essence_dust", "resource_crops:essence")

@@ -1,6 +1,6 @@
 resourcecrops = {}
-local modname = minetest.get_current_modname()
-resourcecrops.path = minetest.get_modpath(modname)
+local modname = core.get_current_modname()
+resourcecrops.path = core.get_modpath(modname)
 local function runfile(file)
     dofile(resourcecrops.path .. "/" .. file .. ".lua")
 end
@@ -16,7 +16,7 @@ if resourcecrops.settings.elements then
     runfile("elements")
 end
 
-local S = minetest.get_translator(minetest.get_current_modname())
+local S = core.get_translator(core.get_current_modname())
 
 
 

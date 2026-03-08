@@ -1,13 +1,13 @@
-[![ContentDB](https://content.minetest.net/packages/TwigGlenn4/resource_crops/shields/title/)](https://content.minetest.net/packages/TwigGlenn4/resource_crops/)
-[![ContentDB](https://content.minetest.net/packages/TwigGlenn4/resource_crops/shields/downloads/)](https://content.minetest.net/packages/TwigGlenn4/resource_crops/)
+[![ContentDB](https://content.luanti.org/packages/TwigGlenn4/resource_crops/shields/title/)](https://content.luanti.org/packages/TwigGlenn4/resource_crops/)
+[![ContentDB](https://content.luanti.org/packages/TwigGlenn4/resource_crops/shields/downloads/)](https://content.luanti.org/packages/TwigGlenn4/resource_crops/)
 
 # Resource Crops [resource_crops]
-Resource Crops adds crops to to grow many ores and elements, inspired by Mark719's Magical Crops mod for Minecraft
+Resource Crops is a Luanti mod that adds crops to grow many ores and elements, inspired by Mark719's Magical Crops mod for Minecraft
 
 ![Resource Crops Screenshot](screenshot.png)
 
 ## Suggestions
-It is extremely helpful to install a crafting guide such as [Unified Inventory](https://content.minetest.net/packages/RealBadAngel/unified_inventory/)
+It is extremely helpful to install a crafting guide such as [Unified Inventory](https://content.luanti.org/packages/RealBadAngel/unified_inventory/)
 as there is no documentation (yet).
 
 
@@ -36,7 +36,7 @@ The options have short descriptions found in the client interface settings or [`
 To change the config options of this mod, you have two options:
 
 ### Client Interface
-1. With Minetest running, click the menu tab called "Settings".
+1. With Luanti running, click the menu tab called "Settings".
 2. Click the "Advanced Setting".
 3. Open the "Mods" section.
 4. Open the "resource_crops" subsection.
@@ -45,7 +45,7 @@ To change the config options of this mod, you have two options:
 ### Text Editor or Server
 1. Find "resource_crops" in your "mods" folder.
 2. Open "settingtypes.txt", copy options you want to change, but not the lines starting with "#".
-3. Find "minetest.conf" in minetest's main folder, it might be beside the "mods" folder.
+3. Find "minetest.conf" in Luanti's main folder, it might be beside the "mods" folder.
 4. Paste the options you copied into minetest.conf, change them to your liking.
 
 ## Compat
@@ -54,9 +54,9 @@ To change the config options of this mod, you have two options:
 Starting with v2.0.0, Resource Crops properly uses the `farming` API and no longer alters behavior.
 
 Includes support for <br>
-* [More Ores](https://content.minetest.net/packages/Calinou/moreores/)
-* [Technic](https://content.minetest.net/packages/RealBadAngel/technic/)
-* [Xtraores](https://forum.minetest.net/viewtopic.php?t=12798)
+* [More Ores](https://content.luanti.org/packages/Calinou/moreores/)
+* [Technic](https://content.luanti.org/packages/RealBadAngel/technic/)
+* [Xtraores](https://forum.luanti.org/viewtopic.php?t=12798)
 
 *Note, only the xtraores version by daviddoesminetest has been tested, other versions may be incompatible. <br>
 *Note 2, xtraores metals level 9 (Rarium) and above are disabled by default for balancing, they can be enabled in settings.
@@ -64,8 +64,8 @@ Includes support for <br>
 ### Add support for Resource Crops to your mod or add-on
 See [API.md](API.md) for info about adding crops and essences for new resources.
 
-### Minetest
-Resource Crops v2.0.1 was developed on Minetest 5.8.0.
+### Luanti
+Resource Crops v2.0.1 was developed on Luanti 5.8.0.
 It might work on older versions, but I have not tested them.
 
 ## Changelog

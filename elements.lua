@@ -1,22 +1,22 @@
-local S = minetest.get_translator(minetest.get_current_modname())
+local S = core.get_translator(core.get_current_modname())
 
 --EARTH--
 resourcecrops.add_crop(S("Earth Seeds"), S("Earth Essence"), "earth", "extreme", "group:stone", nil)
 
 --NATURE--
-minetest.register_craftitem("resource_crops:grass_seed", {
+core.register_craftitem("resource_crops:grass_seed", {
     description = S("Grass Seeds"),
     inventory_image = "resource_crops_grass_seed.png",
 })
 
 resourcecrops.add_crop(S("Nature Seeds"), S("Nature Essence"), "nature", "extreme", "group:leaves", "resource_crops:grass_seed")
 
-minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
+core.register_on_punchnode(function(pos, node, puncher, pointed_thing)
     if node.name == "default:dirt" then
 	local puncher_name = puncher:get_player_name()
 	local item = puncher:get_wielded_item()
 	if item:get_name() == "resource_crops:grass_seed" then
-	    minetest.set_node(pos, {name="default:dirt_with_grass"})
+	    core.set_node(pos, {name="default:dirt_with_grass"})
 	    if not (creative and creative.is_enabled_for and creative.is_enabled_for(puncher:get_player_name())) then
 		item:take_item()
 		puncher:set_wielded_item(item)
@@ -27,14 +27,14 @@ end)
 
 --WATER--
 resourcecrops.add_crop(S("Water Seeds"), S("Water Essence"), "water", "extreme", nil, "default:snow 9")
-minetest.register_craft({
+core.register_craft({
     output = "resource_crops:seed_water_essence",
     recipe = {{"bucket:bucket_water", "resource_crops:essence_extreme", "bucket:bucket_water"},
 	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
 	      {"bucket:bucket_water", "resource_crops:essence_extreme", "bucket:bucket_water"}},
     replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}, {"bucket:bucket_water", "bucket:bucket_empty"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "resource_crops:seed_water_essence",
     recipe = {{"bucket:bucket_river_water", "resource_crops:essence_extreme", "bucket:bucket_river_water"},
 	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
@@ -44,7 +44,7 @@ minetest.register_craft({
 
 --FIRE--
 resourcecrops.add_crop(S("Fire Seeds"), S("Fire Essence"), "fire", "extreme", nil, "fire:permanent_flame")
-minetest.register_craft({
+core.register_craft({
     output = "resource_crops:seed_fire_essence",
     recipe = {{"bucket:bucket_lava", "resource_crops:essence_extreme", "bucket:bucket_lava"},
 	      {"resource_crops:essence_extreme", "resource_crops:seed_essence", "resource_crops:essence_extreme"},
@@ -52,11 +52,11 @@ minetest.register_craft({
     replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}}
 })
 local function fire_essence_smelt(input, result)
-    minetest.register_craft({
+    core.register_craft({
         output = result,
         recipe = {{"resource_crops:fire_essence", input}}
     })
-    minetest.register_craft({
+    core.register_craft({
         output = result.." 2",
         recipe = {{"resource_crops:inferno_stone", input}},
         replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
@@ -67,37 +67,37 @@ end
 
 --CRAFTING--
 --NATURE--
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "default:dirt_with_grass",
     recipe = {"resource_crops:grass_seed", "resource_crops:grass_seed"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "farming:wheat 9",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "farming:cotton 9",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "default:sapling 9",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "default:papyrus 9",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "default:leaves 18",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence"}
 })
-minetest.register_craft({
+core.register_craft({
     type = "shapeless",
     output = "default:tree 9",
     recipe = {"resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence", "resource_crops:nature_essence"}
@@ -106,39 +106,39 @@ minetest.register_craft({
 
 
 --EARTH--
-minetest.register_craft({
+core.register_craft({
     output = "default:dirt 36",
     recipe = {{"resource_crops:earth_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:gravel 36",
     recipe = {{"", "resource_crops:earth_essence", ""},
 	      {"resource_crops:earth_essence", "", "resource_crops:earth_essence"},
 	      {"", "resource_crops:earth_essence", ""}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:sandstone 18",
     recipe = {{"", "resource_crops:earth_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:desert_sandstone 18",
     recipe = {{"resource_crops:earth_essence", "", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:silver_sandstone 18",
     recipe = {{"resource_crops:earth_essence", "resource_crops:earth_essence", ""},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:stone 18",
     recipe = {{"", "resource_crops:earth_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:desert_stone 18",
     recipe = {{"resource_crops:earth_essence", "resource_crops:earth_essence", ""},
 	      {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"},
@@ -148,13 +148,13 @@ minetest.register_craft({
 
 
 --WATER--
-minetest.register_craft({
+core.register_craft({
     output = "bucket:bucket_water",
     recipe = {{"resource_crops:water_essence", "resource_crops:water_essence", "resource_crops:water_essence"},
 	      {"resource_crops:water_essence", "resource_crops:water_essence", "resource_crops:water_essence"},
 	      {"resource_crops:water_essence", "bucket:bucket_empty", ""}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "bucket:bucket_river_water",
     recipe = {{"resource_crops:water_essence", "resource_crops:water_essence", "resource_crops:water_essence"},
 	      {"resource_crops:water_essence", "resource_crops:water_essence", "resource_crops:water_essence"},
@@ -164,23 +164,23 @@ minetest.register_craft({
 
 
 --FIRE--
-minetest.register_craftitem("resource_crops:inferno_stone", {
+core.register_craftitem("resource_crops:inferno_stone", {
 	description = S("Inferno Stone"),
 	inventory_image = "resource_crops_inferno_stone.png",
 	stack_max = 1,
 })
-minetest.register_craft({
+core.register_craft({
 	output = "bucket:bucket_lava",
 	recipe = {{"resource_crops:fire_essence", "resource_crops:fire_essence", "resource_crops:fire_essence"},
 		  {"resource_crops:fire_essence", "resource_crops:fire_essence", "resource_crops:fire_essence"},
 		  {"resource_crops:fire_essence", "bucket:bucket_empty", "resource_crops:fire_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "default:torch 18",
 	recipe = {{"resource_crops:fire_essence"},
 		  {"default:stick"}}
 })
-minetest.register_craft({
+core.register_craft({
 	output = "resource_crops:inferno_stone",
 	recipe = {{"resource_crops:fire_essence", "resource_crops:essence_block", "resource_crops:fire_essence"},
 		  {"bucket:bucket_lava", "default:obsidian", "bucket:bucket_lava"},
@@ -189,34 +189,34 @@ minetest.register_craft({
 })
 
 --MIX--
-minetest.register_craft({
+core.register_craft({
     output = "default:obsidian 9",
     recipe = {{"resource_crops:fire_essence", "resource_crops:fire_essence", "resource_crops:fire_essence"},
 		  {"resource_crops:earth_essence", "resource_crops:earth_essence", "resource_crops:earth_essence"},
 		  {"resource_crops:water_essence", "resource_crops:water_essence", "resource_crops:water_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:clay 36",
     recipe = {{"resource_crops:earth_essence", "resource_crops:water_essence"},
 	      {"resource_crops:water_essence", "resource_crops:earth_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:clay 36",
     recipe = {{"resource_crops:water_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:water_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:sand 36",
     recipe = {{"resource_crops:fire_essence", "resource_crops:earth_essence"},
 	      {"resource_crops:earth_essence", "resource_crops:fire_essence"}}
 })
-minetest.register_craft({
+core.register_craft({
     output = "default:sand 36",
     recipe = {{"resource_crops:earth_essence", "resource_crops:fire_essence"},
 	      {"resource_crops:fire_essence", "resource_crops:earth_essence"}}
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = "fuel",
 	recipe = "resource_crops:fire_essence",
 	burntime = 60,
