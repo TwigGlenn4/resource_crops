@@ -73,13 +73,30 @@ Resource Essence (shapeless)
 To use alternate recipes, you can leave `recipe_input` and/or `recipe_output` blank, then define your own recipes to craft a seed and/or use the essence. Examples of this are in [elements.lua](elements.lua)
 
 ## Fire Essence Smelting
- - The `fire_essence_smelt()` function is currently local, but will be made available to other mods (addons or plugins) very shortly as `resourcecrops.fire_essence_smelt()`.
 
-```lua
-resourcecrops.fire_essence_smelt(input,               result)
-  -- example:                   ("default:iron_lump", "default:iron_ingot")
-```
-
-Fire Essence Smelting is a shortcut to register two recipes
+Fire Essence Smelting is a shortcut to register two shapeless recipes
  - Fire Essence + `input` = `result`
  - Inferno Stone + `input` = 2 `result`
+
+```lua
+resourcecrops.register_fire_essence_smelting(input,               result)
+  -- example:                               ("default:iron_lump", "default:iron_ingot")
+```
+
+ - Note: this function is incompatible with `result` itemstrings including a quantity (ex. `"default:iron_ingot 2"`) due to the extremely simple logic for making the Inferno Stone smelt into two items.
+ If you want control over the quantities output by the recipe, you must register the recipes manually using the following code block.
+
+```lua
+core.register_craft({
+    type = "shapeless",
+    output = result, -- fire essence smelting result
+    recipe = {"resource_crops:fire_essence", input}
+})
+core.register_craft({
+    type = "shapeless",
+    output = result, -- inferno stone smelting result
+    recipe = {"resource_crops:inferno_stone", input},
+    replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
+})
+```
+ 

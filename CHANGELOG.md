@@ -1,6 +1,8 @@
 # v2.0.2
 * Add documentation for other mods to add support for Resource Crops in [API.md](API.md).
-* Refactor to `core` namespace instead of `minetest` and update Minetest to Luanti
+* Refactor to `core` namespace instead of `minetest` and update Minetest to Luanti.
+* Make `resourcecrops.register_fire_essence_smelting(input, result)` a public function for other mods to easily register Fire Essence and Inferno Stone smelting recipes.
+* Make Fire Essence and Inferno Stone recipes shapeless.
 # v2.0.1
 * Add a null check in `resourcecrops.check_crop_node(pos)` to prevent a crash when punching unknown nodes.
 # v2.0.0

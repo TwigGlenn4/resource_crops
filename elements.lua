@@ -51,14 +51,17 @@ core.register_craft({
 	      {"bucket:bucket_lava", "resource_crops:essence_extreme", "bucket:bucket_lava"}},
     replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}, {"bucket:bucket_lava", "bucket:bucket_empty"}}
 })
-local function fire_essence_smelt(input, result)
+
+function resourcecrops.register_fire_essence_smelting(input, result)
     core.register_craft({
+        type = "shapeless",
         output = result,
-        recipe = {{"resource_crops:fire_essence", input}}
+        recipe = {"resource_crops:fire_essence", input}
     })
     core.register_craft({
+        type = "shapeless",
         output = result.." 2",
-        recipe = {{"resource_crops:inferno_stone", input}},
+        recipe = {"resource_crops:inferno_stone", input},
         replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
     })
 end
@@ -222,46 +225,46 @@ core.register_craft({
 	burntime = 60,
 })
 --FIRE ESSENCE SMELTING--
-fire_essence_smelt("default:clay_lump", "default:clay_brick")
-fire_essence_smelt("default:tin_lump", "default:tin_ingot")
-fire_essence_smelt("default:copper_lump", "default:copper_ingot")
-fire_essence_smelt("default:iron_lump", "default:iron_ingot")
-fire_essence_smelt("default:gold_lump", "default:gold_ingot")
-fire_essence_smelt("default:cobble", "default:stone")
-fire_essence_smelt("default:mossy_cobble", "default:stone")
-fire_essence_smelt("default:desert_cobble", "default:desert_stone")
-fire_essence_smelt("group:sand", "default:glass")
-fire_essence_smelt("default:obsidian_shard", "default:obsidian_glass")
-fire_essence_smelt("default:key", "default:gold_ingot")
-fire_essence_smelt("default:skeleton_key", "default:gold_ingot")
+resourcecrops.register_fire_essence_smelting("default:clay_lump", "default:clay_brick")
+resourcecrops.register_fire_essence_smelting("default:tin_lump", "default:tin_ingot")
+resourcecrops.register_fire_essence_smelting("default:copper_lump", "default:copper_ingot")
+resourcecrops.register_fire_essence_smelting("default:iron_lump", "default:iron_ingot")
+resourcecrops.register_fire_essence_smelting("default:gold_lump", "default:gold_ingot")
+resourcecrops.register_fire_essence_smelting("default:cobble", "default:stone")
+resourcecrops.register_fire_essence_smelting("default:mossy_cobble", "default:stone")
+resourcecrops.register_fire_essence_smelting("default:desert_cobble", "default:desert_stone")
+resourcecrops.register_fire_essence_smelting("group:sand", "default:glass")
+resourcecrops.register_fire_essence_smelting("default:obsidian_shard", "default:obsidian_glass")
+resourcecrops.register_fire_essence_smelting("default:key", "default:gold_ingot")
+resourcecrops.register_fire_essence_smelting("default:skeleton_key", "default:gold_ingot")
 if resourcecrops.has_moreores then
-    fire_essence_smelt("moreores:silver_lump", "moreores:silver_ingot")
-    fire_essence_smelt("moreores:mithril_lump", "moreores:mithril_ingot")
+    resourcecrops.register_fire_essence_smelting("moreores:silver_lump", "moreores:silver_ingot")
+    resourcecrops.register_fire_essence_smelting("moreores:mithril_lump", "moreores:mithril_ingot")
 end
 if resourcecrops.has_technic_ores then
-    fire_essence_smelt("technic:uranium_lump", "technic:uranium_ingot")
-    fire_essence_smelt("technic:chromium_lump", "technic:chromium_ingot")
-    fire_essence_smelt("technic:zinc_lump", "technic:zinc_ingot")
-    fire_essence_smelt("technic:lead_lump", "technic:lead_ingot")
-    fire_essence_smelt("default:iron_ingot", "technic:cast_iron_ingot")
-    fire_essence_smelt("technic:cast_iron_ingot", "default:iron_ingot")
-    fire_essence_smelt("technic:carbon_steel_ingot", "default:iron_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:uranium_lump", "technic:uranium_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:chromium_lump", "technic:chromium_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:zinc_lump", "technic:zinc_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:lead_lump", "technic:lead_ingot")
+    resourcecrops.register_fire_essence_smelting("default:iron_ingot", "technic:cast_iron_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:cast_iron_ingot", "default:iron_ingot")
+    resourcecrops.register_fire_essence_smelting("technic:carbon_steel_ingot", "default:iron_ingot")
 end
 if resourcecrops.has_terumet then
-    fire_essence_smelt("terumet:lump_raw", "terumet:ingot_raw")
+    resourcecrops.register_fire_essence_smelting("terumet:lump_raw", "terumet:ingot_raw")
 end
 if resourcecrops.has_xtraores then
-    fire_essence_smelt("xtraores:nickel_ore", "xtraores:nickel_bar")
-    fire_essence_smelt("xtraores:platinum_ore", "xtraores:platinum_bar")
-    fire_essence_smelt("xtraores:palladium_ore", "xtraores:palladium_bar")
-    fire_essence_smelt("xtraores:cobalt_ore", "xtraores:cobalt_bar")
-    fire_essence_smelt("xtraores:thorium_ore", "xtraores:thorium_bar")
-    fire_essence_smelt("xtraores:osmium_ore", "xtraores:osmium_bar")
-    fire_essence_smelt("xtraores:rhenium_ore", "xtraores:rhenium_bar")
-    fire_essence_smelt("xtraores:vanadium_ore", "xtraores:vanadium_bar")
-    fire_essence_smelt("xtraores:rarium_ore", "xtraores:rarium_bar")
-    fire_essence_smelt("xtraores:orichalcum_ore", "xtraores:orichalcum_bar")
-    fire_essence_smelt("xtraores:titanium_ore", "xtraores:titanium_bar")
-    fire_essence_smelt("xtraores:uranium_ore", "xtraores:uranium_bar")
-    fire_essence_smelt("xtraores:chromium_ore", "xtraores:chromium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:nickel_ore", "xtraores:nickel_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:platinum_ore", "xtraores:platinum_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:palladium_ore", "xtraores:palladium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:cobalt_ore", "xtraores:cobalt_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:thorium_ore", "xtraores:thorium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:osmium_ore", "xtraores:osmium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:rhenium_ore", "xtraores:rhenium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:vanadium_ore", "xtraores:vanadium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:rarium_ore", "xtraores:rarium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:orichalcum_ore", "xtraores:orichalcum_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:titanium_ore", "xtraores:titanium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:uranium_ore", "xtraores:uranium_bar")
+    resourcecrops.register_fire_essence_smelting("xtraores:chromium_ore", "xtraores:chromium_bar")
 end
