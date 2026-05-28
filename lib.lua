@@ -35,12 +35,13 @@ function resourcecrops.check_crop_node(pos)
 end
 
 
-function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output,         mod_name)
-  -- example:                  ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output)
+  -- example parameters:       ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
 
-  if not mod_name then
-    mod_name = "resource_crops"
-  end
+  -- To make sure this works when called by other mods, core.get_current_modname() should get the mod string.
+  local mod_name = core.get_current_modname()
+
+  -- print("[resourcecrops.add_crop()] Adding "..resource_name.." from mod "..mod_name)
   
   local essence_item = mod_name..":"..resource_name.."_essence"
   local essence_ingredient = "resource_crops:essence_"..essence_level
