@@ -35,10 +35,14 @@ function resourcecrops.check_crop_node(pos)
 end
 
 
-function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output        )
-  -- example: 								 ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output,         mod_name)
+  -- example:                  ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+
+  if not mod_name then
+    mod_name = "resource_crops"
+  end
   
-  local essence_item = "resource_crops:"..resource_name.."_essence"
+  local essence_item = mod_name..":"..resource_name.."_essence"
   local essence_ingredient = "resource_crops:essence_"..essence_level
 
   -- Register Plant
@@ -49,7 +53,7 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
     harvest_description = essence_description,
     paramtype2 = "meshoptions",
     place_param2 = 0,
-    inventory_image = "resource_crops_"..resource_name.."_seed.png",
+    inventory_image = mod_name.."_"..resource_name.."_seed.png",
     steps = 4,
     minlight = 8,
     maxlight = default.LIGHT_MAX,
@@ -91,11 +95,13 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
     }
   })
 
-  -- Register aliases for v1.x.x
-  core.register_alias("resource_crops:"..resource_name.."_seed", seed_item)
-  core.register_alias("resource_crops:"..resource_name.."crop_1", essence_item.."_1")
-  core.register_alias("resource_crops:"..resource_name.."crop_2", essence_item.."_2")
-  core.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
-  core.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
+  if mod_name == "resource_crops" then
+    -- Register aliases for v1.x.x
+    core.register_alias("resource_crops:"..resource_name.."_seed", seed_item)
+    core.register_alias("resource_crops:"..resource_name.."crop_1", essence_item.."_1")
+    core.register_alias("resource_crops:"..resource_name.."crop_2", essence_item.."_2")
+    core.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
+    core.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
+  end
 end
 

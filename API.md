@@ -24,8 +24,8 @@ The `resourcecrops.add_crop()` function automatically handles most of creating a
 See examples in [init.lua](init.lua). 
 - Note for examples from source code: This mod uses a translator `S("input_text")` for descriptions when calling `add_crop()`. This is not required, just use a string if you are not using a translator.
 ``` lua
-resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output        )
-  -- example:         ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output,         mod_name)
+  -- example:         ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2", "resource_crops")
 ```
 
 ### Parameters
@@ -35,6 +35,7 @@ resourcecrops.add_crop(seed_description, essence_description, resource_name,   e
  - `essence_level`: The essence used in the crafting [Recipe](#recipes) for the seed. Essence levels are `weak`, `regular`, `strong`, and `extreme`.
  - `recipe_input`: The itemstring of the resource item used in the crafting [Recipe](#recipes) for the seed. If not defined or `nil`, the recipe for the seed will not be registered automatically.
  - `recipe_output`: The itemstring of the output of crafting 9 resource essence together, optionally including the number of items. If not defined or `nil`, the recipe will not be registered automatically.
+ - `mod_name`: The name of the mod the new items should be created in
 
 ### Created Items
 | Item Name             | Itemstring                                          | Name Example (Coal) | Itemstring Example (Coal)            |
