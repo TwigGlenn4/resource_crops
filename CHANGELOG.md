@@ -1,3 +1,5 @@
+# v2.0.3
+* Fix other mods unable to use `resourcecrops.add_crop()` due to namespace issues by auto-detecting mod name and allowing override.
 # v2.0.2
 * Add documentation for other mods to add support for Resource Crops in [API.md](API.md).
 * Refactor to `core` namespace instead of `minetest` and update Minetest to Luanti.

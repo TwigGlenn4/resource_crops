@@ -21,11 +21,11 @@ end
 
 ## Add crops and items using `resourcecrops.add_crop()`
 The `resourcecrops.add_crop()` function automatically handles most of creating a crop, essence, and crafting recipes for a resource. <br>
-See examples in [init.lua](init.lua). 
+See examples in [init.lua](init.lua).
 - Note for examples from source code: This mod uses a translator `S("input_text")` for descriptions when calling `add_crop()`. This is not required, just use a string if you are not using a translator.
 ``` lua
-resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output)
-  -- example:         ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
+resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output,         override_mod_name(optional))
+  -- example:         ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2", "resource_crops")
 ```
 
 ### Parameters
@@ -35,12 +35,21 @@ resourcecrops.add_crop(seed_description, essence_description, resource_name,   e
  - `essence_level`: The essence used in the crafting [Recipe](#recipes) for the seed. Essence levels are `weak`, `regular`, `strong`, and `extreme`.
  - `recipe_input`: The itemstring of the resource item used in the crafting [Recipe](#recipes) for the seed. If not defined or `nil`, the recipe for the seed will not be registered automatically.
  - `recipe_output`: The itemstring of the output of crafting 9 resource essence together, optionally including the number of items. If not defined or `nil`, the recipe will not be registered automatically.
+ - `override_mod_name`: Optional. If given, registers the crop, essence, and seeds in the namespace owned by the referenced mod. This also allows re-registering an existing crop (note: does not remove recipes from first registration)
+
+Note: Itemstrings are generated using the `mod_name` variable, which is the name of the mod that calls `resourcecrops.add_crop()`, or the `override_mod_name` parameter if given.
 
 ### Created Items
 | Item Name             | Itemstring                                          | Name Example (Coal) | Itemstring Example (Coal)            |
 |-----------------------|-----------------------------------------------------|---------------------|--------------------------------------|
-| `essence_description` | `"resource_crops:"..resource_name.."_essence"`      | "Coal Essence"      | `"resource_crops:coal_essence"`      |
-| `seed_description`    | `"resource_crops:seed_"..resource_name.."_essence"` | "Coal Seeds"        | `"resource_crops:seed_coal_essence"` |
+| `essence_description` | `mod_name..":"..resource_name.."_essence"`      | "Coal Essence"      | `"resource_crops:coal_essence"`      |
+| `seed_description`    | `mod_name..":seed_"..resource_name.."_essence"` | "Coal Seeds"        | `"resource_crops:seed_coal_essence"` |
+
+### Return
+The function returns a table containing the following contents for easier reuse:
+ - `seed` = `mod_name..":seed_"..resource_name.."_essence"`
+ - `essence` = `mod_name..":"..resource_name.."_essence"`
+ - `essence_ingredient` = `"resource_crops:essence_"..essence_level`
 
 ### Recipes
 Resource Seed (if `recipe_input` is not `nil`)
@@ -53,24 +62,24 @@ Resource Seed (if `recipe_input` is not `nil`)
 `recipe_output` (if not `nil`)
 | Location | Item Name | Itemstring |
 | --- | --- | ---|
-| Every Slot   | `essence_description` | `"resource_crops:"..resource_name.."_essence"` |
+| Every Slot   | `essence_description` | `mod_name..":"..resource_name.."_essence"` |
 
 Resource Essence (shapeless)
 - Resource Seed
 
 ### Expected Textures
 | Texture | Filename | Example |
-| --- | --- | --- |
-| Resource Essence | `"resource_crops_"..resource_name.."_essence.png"` | `"resource_crops_coal_essence.png"` |
-| Plant Stage 1 | `"resource_crops_"..resource_name.."_essence_1.png"` | `"resource_crops_coal_essence_1.png"` |
-| Plant Stage 2 | `"resource_crops_"..resource_name.."_essence_2.png"` | `"resource_crops_coal_essence_2.png"` |
-| Plant Stage 3 | `"resource_crops_"..resource_name.."_essence_3.png"` | `"resource_crops_coal_essence_3.png"` |
-| Plant Stage 4 | `"resource_crops_"..resource_name.."_essence_4.png"` | `"resource_crops_coal_essence_4.png"` |
-| Resource Seed | `"resource_crops_"..resource_name.."_seed.png"` | `"resource_crops_coal_seed.png"` |
+| ------- | -------- | ------- |
+| Resource Essence | `mod_name.."_"..resource_name.."_essence.png"` | `"resource_crops_coal_essence.png"`   |
+| Plant Stage 1 | `mod_name.."_"..resource_name.."_essence_1.png"`  | `"resource_crops_coal_essence_1.png"` |
+| Plant Stage 2 | `mod_name.."_"..resource_name.."_essence_2.png"`  | `"resource_crops_coal_essence_2.png"` |
+| Plant Stage 3 | `mod_name.."_"..resource_name.."_essence_3.png"`  | `"resource_crops_coal_essence_3.png"` |
+| Plant Stage 4 | `mod_name.."_"..resource_name.."_essence_4.png"`  | `"resource_crops_coal_essence_4.png"` |
+| Resource Seed | `mod_name.."_"..resource_name.."_seed.png"`       | `"resource_crops_coal_seed.png"`      |
 
 
 ## Alternate Recipes
-To use alternate recipes, you can leave `recipe_input` and/or `recipe_output` blank, then define your own recipes to craft a seed and/or use the essence. Examples of this are in [elements.lua](elements.lua)
+To use alternate recipes, you can leave `recipe_input` and/or `recipe_output` blank or nil, then define your own recipes to craft a seed and/or use the essence. Examples of this are in [elements.lua](elements.lua)
 
 ## Fire Essence Smelting
 Fire Essence Smelting is a shortcut to register two shapeless recipes
@@ -98,4 +107,4 @@ core.register_craft({
     replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
 })
 ```
- 
+

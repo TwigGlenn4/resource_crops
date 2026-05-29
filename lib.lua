@@ -31,18 +31,21 @@ function resourcecrops.check_crop_node(pos)
 	if def == nil then
     return false
   end
-  return def.groups.resource_crops_harvestable == 1 
+  return def.groups.resource_crops_harvestable == 1
 end
 
 
-function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output)
+function resourcecrops.add_crop(seed_description, essence_description, resource_name,   essence_level, recipe_input,        recipe_output        , override_mod_name)
   -- example parameters:       ("Coal Seeds",     "Coal Essence",      "coal",          "weak",        "default:coal_lump", "default:coal_lump 2")
 
   -- To make sure this works when called by other mods, core.get_current_modname() should get the mod string.
   local mod_name = core.get_current_modname()
 
-  -- print("[resourcecrops.add_crop()] Adding "..resource_name.." from mod "..mod_name)
-  
+  if override_mod_name then -- allow overriding crops/nodes/essences created by another mod.
+    mod_name = override_mod_name
+  end
+  -- print("[resourcecrops.add_crop()] Adding "..resource_name.." crop from mod "..mod_name)
+
   local essence_item = mod_name..":"..resource_name.."_essence"
   local essence_ingredient = "resource_crops:essence_"..essence_level
 
@@ -104,5 +107,12 @@ function resourcecrops.add_crop(seed_description, essence_description, resource_
     core.register_alias("resource_crops:"..resource_name.."crop_3", essence_item.."_3")
     core.register_alias("resource_crops:"..resource_name.."crop", essence_item.."_4")
   end
+
+  -- return a table including relevant info on the created crop.
+  return {
+    seed = seed_item,
+    essence = essence_item,
+    essence_ingredient = essence_ingredient
+  }
 end
 
