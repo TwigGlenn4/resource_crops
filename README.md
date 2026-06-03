@@ -20,7 +20,7 @@ The Essence Harvester will harvest any fully grown resource crop directly under 
 You can punch a fully grown crop to harvest it.
 ### Seeds
 Seeds are placed on farmland, and only grow when it is wet and there is a light level of at least 8. Excess seeds can be crafted into their respective essence.
-### Essences 
+### Essences
 Essences are usually crafted into materials by filling the crafting grid, see special recipies with a crafting guide mod.
 ### Elemental Essences
 Mostly used as another way to get misc items. Fire essence can be crafted with an item to smelt it.
@@ -63,7 +63,7 @@ Includes support for <br>
 See [API.md](API.md) for info about adding crops and essences for new resources.
 
 ### Luanti
-Resource Crops v2.0.2 was developed on Luanti 5.14.0.
+Resource Crops v2.0.3 was developed on Luanti 5.16.1.
 It might work on older versions, but I have not tested them.
 
 ## Changelog
