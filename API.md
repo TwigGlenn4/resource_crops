@@ -84,15 +84,16 @@ To use alternate recipes, you can leave `recipe_input` and/or `recipe_output` bl
 ## Fire Essence Smelting
 Fire Essence Smelting is a shortcut to register two shapeless recipes
  - Fire Essence + `input` = `result`
- - Inferno Stone + `input` = 2 `result`
+ - Inferno Stone + `input` = 2 * `result`
 
 ```lua
 resourcecrops.register_fire_essence_smelting(input,               result)
-  -- example:                               ("default:iron_lump", "default:iron_ingot")
+  -- example:                               ("default:iron_lump", "default:iron_ingot 2")
+  -- results: Fire Essence + Iron Lump = 2 Iron Ingot
+  --          Inferno Stone + Iron Lump = 4 Iron Ingot
 ```
 
- - Note: this function is incompatible with `result` itemstrings including a quantity (ex. `"default:iron_ingot 2"`) due to the extremely simple logic for making the Inferno Stone smelt into two items.
- If you want control over the quantities output by the recipe, you must register the recipes manually using the following code block.
+ - If you want further control over the quantities output by the recipe, you can register the recipes manually using the following code block.
 
 ```lua
 core.register_craft({

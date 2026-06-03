@@ -53,6 +53,17 @@ core.register_craft({
 })
 
 function resourcecrops.register_fire_essence_smelting(input, result)
+    -- separate out result item count from item name
+    local split = {}
+    for section in string.gmatch(result, "[^%s]+") do
+        table.insert(split, section)
+    end
+    local itemname = split[1]
+    local count = split[2] or 1
+    count = math.floor(tonumber(count))
+
+    local inferno_result = itemname.." "..(count*2)
+
     core.register_craft({
         type = "shapeless",
         output = result,
@@ -60,7 +71,7 @@ function resourcecrops.register_fire_essence_smelting(input, result)
     })
     core.register_craft({
         type = "shapeless",
-        output = result.." 2",
+        output = inferno_result,
         recipe = {"resource_crops:inferno_stone", input},
         replacements = {{"resource_crops:inferno_stone", "resource_crops:inferno_stone"}}
     })

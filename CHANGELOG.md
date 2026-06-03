@@ -1,9 +1,11 @@
 # v2.0.3
 * Fix other mods unable to use `resourcecrops.add_crop()` due to namespace issues by auto-detecting mod name and allowing override.
+* Allow `resourcecrops.register_fire_essence_smelting()` to handle item quantity in the result variable.
 
 **API**
 * Added optional `override_mod_name` parameter to end of `resourcecrops.add_crop()` param list.
 * `resourcecrops.add_crop()` now uses the calling mod's name for nodes and textures, see [API.md](API.md). This is a breaking change.
+* `resourcecrops.register_fire_essence_smelting()` now properly applies quantities of result item in itemstring format (ex. `"default:iron_ingot 2"`)
 
 # v2.0.2
 * Add documentation for other mods to add support for Resource Crops in [API.md](API.md).
